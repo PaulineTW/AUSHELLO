@@ -1,5 +1,9 @@
-<h3><%= resource.name %></h3>
-<h4><%= resource.category %></h4>
-<p><%= resource.address %></p>
-<p>Website: <%= resource.website %></p>
-<p>Email: <%= resource.email %></p>
+<div class="container">
+  <h3><%= resource.name %></h3>
+  <h5><%= resource.category %></h5>
+  <p><%= resource.address %></p>
+  <p>Email: <%= mail_to resource.email %></p>
+  <a href="<%= resource.website %>" target="_blank">Website</a> |
+  <a href="<%= resource.phone %>">Call</a> |
+  <a href="https://www.google.com/maps/" target="_blank">Directions</a> |
+</div>
