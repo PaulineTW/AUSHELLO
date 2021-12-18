@@ -1,13 +1,12 @@
 class ResourcesController < ApplicationController
 
-  def index
+def index
     @resources = Resource.all
-     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @resources.geocoded.map do |resource|
+      @markers = @resources.geocoded.map do |resource|
       {
         lat: resource.latitude,
-        lng: resource.longitude
-        info_window: render_to_string(partial: "info_window", locals: { flat: flat })
+        lng: resource.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { resource: resource })
       }
     end
   end
