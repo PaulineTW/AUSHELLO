@@ -1,5 +1,4 @@
 import mapboxgl from '!mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const buildMap = (mapElement) => {
@@ -13,8 +12,8 @@ const buildMap = (mapElement) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_window); // add this
-    popup.addClassName('card_window');
+    const popup = new mapboxgl.Popup({ className: 'popup' })
+    .setHTML(marker.info_window);
 
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
