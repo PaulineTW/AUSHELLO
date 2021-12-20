@@ -14,6 +14,7 @@
 
 
 .popup {
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 55%);
   border-radius: 15px;
   border-color: orange !important;
   border-style: solid;
@@ -24,6 +25,5 @@
   margin-bottom: 60px;
   padding-bottom: 25px;
   border: 2px solid #0b5cb2;
-  box-shadow: 1px 1px 3px 0px rgb(0 0 0 / 55%);
   width: 100%;
 }
