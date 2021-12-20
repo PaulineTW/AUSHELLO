@@ -1,14 +1,24 @@
 .mapboxgl-popup {
   max-width: 300px;
+  // padding-bottom: 50px;
+  .card_window {
+      background-color: green;
+    }
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  border: 10px;
+  box-shadow: 1px 1px 3px 0px rgb(0 0 0 / 55%);
 
 }
 
-// .container {
+.mapboxgl-popup {
+  max-width: 300px;
+}
+
+// .card_window {
 //   border-radius: 15px;
 //   overflow-y: auto;
 //   flex: 0 1 auto;

@@ -1,20 +1,24 @@
 import mapboxgl from '!mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10'
+
   });
 };
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window); // add this
+    popup.addClassName('card_window');
 
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
-      .setPopup(popup) // add this
+      .setPopup(popup)
       .addTo(map);
   });
 };
@@ -38,6 +42,5 @@ const initMapbox = () => {
     }));
   }
 };
-
 
 export { initMapbox };
