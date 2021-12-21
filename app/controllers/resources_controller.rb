@@ -1,7 +1,14 @@
 class ResourcesController < ApplicationController
 
-  def index
+def index
     @resources = Resource.all
+      @markers = @resources.geocoded.map do |resource|
+      {
+        lat: resource.latitude,
+        lng: resource.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { resource: resource })
+      }
+    end
   end
 
   def new
