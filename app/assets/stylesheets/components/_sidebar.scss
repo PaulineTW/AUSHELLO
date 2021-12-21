@@ -1,0 +1,25 @@
+#main {
+  width: 370px;
+  height: 100vh;
+  min-height: 450px;
+  margin-left: 1.5vw;
+  display: flex;
+  flex-direction: column;
+}
+
+#top {
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 0;
+  align-items: center;
+  margin-bottom: 1.5em;
+  border-radius: 0 0 8px 8px;
+}
+
+#logo {
+  width: 85%;
+  padding-right: 8%;
+  margin-bottom: 0.7rem;
+}

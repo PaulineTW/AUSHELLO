@@ -1,5 +1,19 @@
-<div id="map"
-     style="width: 100%; height: 100vh;"
+<div id="map" class="mapbaxgl-map"
      data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<div id= "main">
+     <div id= "top">
+          <%# <img id="logo" src="aushello_logo_cap.png"> %>
+          <img id="logo"><%= link_to image_tag("aushello_logo_cap.png"), root_path%>
+          
+     </div>
+     <div id= "bottom">
+     
+     </div>
+</div>
+
+          <img id="logo" src="/assets/aushello_logo_cap.png">
+
 
