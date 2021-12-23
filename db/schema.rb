@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_145934) do
+ActiveRecord::Schema.define(version: 2021_12_22_115314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_12_21_145934) do
 
   create_table "resources", force: :cascade do |t|
     t.string "name"
-    t.string "category"
+    t.string "category1"
     t.string "address"
     t.string "website"
     t.string "phone"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_145934) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "category2"
+    t.string "category3"
     t.index ["user_id"], name: "index_resources_on_user_id"
   end
 
