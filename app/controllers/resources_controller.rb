@@ -29,7 +29,7 @@ def index
   private
 
   def resource_params
-    params.require(:resource).permit(:name, :category1, :category2, category3, :description, :address, :website, :phone, :state, :email, :status)
+    params.require(:resource).permit(:name, :category1, :category2, :category3, :description, :address, :website, :phone, :state, :email, :status)
   end
 
 end
