@@ -1,2 +1,43 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="split left">
+  <div class= "background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('refugee.jpg') %>)">
+    <div class="centered">
+      <div class="card p-4">
+        <div class="card-title">
+          <h2>Welcome</h2>
+          <h3>Choose your language</h3>
+        </div>
+        <div>
+          <input type="radio" id="english" name="drone" value="english"
+                checked>
+          <label for="English">English</label>
+        </div>
+        <div>
+          <input type="radio" id="dewey" name="spanish" value="spanish">
+          <label for="Spanish">Spanish</label>
+        </div>
+        <div>
+          <input type="radio" id="persian" name="drone" value="persian">
+          <label for="Persian">فارسی, fārsi</label>
+        </div>
+        <div>
+          <input type="radio" id="arabic" name="drone" value="arabic"
+                checked>
+          <label for="Arabic">العربية</label>
+        </div>
+        <div>
+          <input type="radio" id="burmese" name="drone" value="burmese"
+                checked>
+          <label for="Burmese">ဗမာဘာသာစကား</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+    <%= image_tag "aushello_logo.png", class:"logo" %>
+    <h3>Find services. Build your life.</h3>
+    <%= link_to 'Search now', resources_path, class: "btn btn-outline-dark m-5" %>
+  </div>
+</div>
