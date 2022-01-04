@@ -4,7 +4,6 @@
   top: 0;
   width: 100%;
   opacity: 0.80;
-  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -17,7 +16,6 @@
   z-index: 1;
   top: 0;
   overflow-x: hidden;
-  padding-top: 20px;
 }
 
 /* Control the left side */
@@ -43,10 +41,6 @@
 
 /* Style the image inside the centered container, if needed */
 .centered img {
-  width: 150px;
+  width: 300px;
   border-radius: 50%;
 }
-
-  .logo_home {
-    width: 400px;
-  }
