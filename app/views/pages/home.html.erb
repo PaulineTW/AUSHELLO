@@ -1,2 +1,47 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="split left">
+  <div class="centered">
+    <div class="card">
+      <div class="card-title">
+        <h2>Welcome</h2>
+        <p>Choose your language</p>
+      </div>
+      <div>
+        <input type="radio" id="english" name="drone" value="english"
+              checked>
+        <label for="English">English</label>
+      </div>
+
+      <div>
+        <input type="radio" id="dewey" name="spanish" value="spanish">
+        <label for="Spanish">Spanish</label>
+      </div>
+
+      <div>
+        <input type="radio" id="persian" name="drone" value="persian">
+        <label for="Persian">فارسی, fārsi (Persian)</label>
+      </div>
+
+      <div>
+        <input type="radio" id="arabic" name="drone" value="arabic"
+              checked>
+        <label for="Arabic">(Arabic) العربية</label>
+      </div>
+
+      <div>
+        <input type="radio" id="burmese" name="drone" value="burmese"
+              checked>
+        <label for="Burmese">ဗမာဘာသာစကား (Burmese)</label>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+    <%= image_tag "aushello_logo.png", class:"logo" %>
+    <%# <img src="aushello_logo.png" alt="logo"> %>
+    <p>Find services. Build your life.</p>
+    <button type="button" class="btn btn-outline-dark">Search now</button>
+  </div>
+</div>
