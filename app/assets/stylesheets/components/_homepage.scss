@@ -1,3 +1,14 @@
+.background {
+  height: 100%;
+  position: relative;
+  top: 0;
+  width: 100%;
+  opacity: 0.80;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* Split the screen in half */
 .split {
   height: 100%;
@@ -35,3 +46,7 @@
   width: 150px;
   border-radius: 50%;
 }
+
+  .logo_home {
+    width: 400px;
+  }
