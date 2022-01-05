@@ -35,6 +35,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'geocoder'
 gem "algoliasearch-rails"
+gem 'acts-as-taggable-on', '~> 8.1'
 
 group :development, :test do
   gem 'pry-byebug'
