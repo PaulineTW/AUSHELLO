@@ -8,11 +8,11 @@
         <div>
           <input type="radio" id="english" name="drone" value="english"
                 checked>
-          <label for="English">English</label>
+          <label for="English"><%= t("English")  %></label>
         </div>
         <div>
           <input type="radio" id="dewey" name="spanish" value="spanish">
-          <label for="Spanish">Spanish</label>
+          <label for="Spanish"><%= t("Spanish") %></label>
         </div>
         <div>
           <input type="radio" id="persian" name="drone" value="persian">
@@ -37,6 +37,6 @@
   <div class="centered">
     <%= image_tag "aushello_logo.png", class:"logo" %>
     <h3><%= t("Slogan") %></h3>
-    <%= link_to 'Search now', resources_path, class: "btn btn-outline-dark m-5" %>
+    <%= link_to t("Search Now"), resources_path, class: "btn btn-outline-dark m-5" %>
   </div>
 </div>

@@ -8,7 +8,7 @@ def set_locale
 end
 
 def set_locale
-  I18n.locale = :ar
+  I18n.locale = :es
 end
 
 def locale_from_header
