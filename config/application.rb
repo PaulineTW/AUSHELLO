@@ -22,6 +22,10 @@ module AUSHELLO
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    def default_url_options
+      { locale: I18n.locale }
+    end
+
     config.i18n.available_locales = [:en, :es, :ar]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = true
