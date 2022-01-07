@@ -5,7 +5,9 @@
   <p><%= t("Description") %>: <br><%= resource.description %></p>
   <p><%= t("Email")  %>: <%= mail_to resource.email %></p>
   <br>
-  <a href="#" target="_blank"><%= t("Incorrect Info") %></a>
+  <%= link_to "#newTag", data: { toggle: "modal" } do %>
+    <i class="fa fa-wrench"></i> Is this information wrong?
+  <% end %>
   <br>
   <br>
   <a href="<%= resource.website %>" target="_blank"><%= t("Website")  %></a> |
