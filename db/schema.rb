@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2022_01_06_055214) do
 
   create_table "resources", force: :cascade do |t|
     t.string "name"
-    t.string "category1"
     t.string "address"
     t.string "website"
     t.string "phone"
@@ -39,8 +38,6 @@ ActiveRecord::Schema.define(version: 2022_01_06_055214) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
-    t.string "category2"
-    t.string "category3"
     t.string "full_address"
     t.index ["user_id"], name: "index_resources_on_user_id"
   end
