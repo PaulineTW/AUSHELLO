@@ -1,1 +1,21 @@
 <h1> This is the form for the organization to add resource</h1>
+
+<div class='container'>
+  <%= simple_form_for(@resource) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <%= f.submit %>
+  <% end %>
+</div>
