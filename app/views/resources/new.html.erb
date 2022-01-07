@@ -1,21 +1,40 @@
-<h1> This is the form for the organization to add resource</h1>
+<div class="split left">
+  <div class="centered">
+    <%= image_tag "aushello_logo.png", class:"logo" %>
+    <h3>Help us provide more services</h3>
+    <%= link_to "Back Home", resources_path, class: "btn btn-outline-dark m-5" %>
+  </div>
+</div>
 
-<div class='container'>
-  <%= simple_form_for(@resource) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-    <%= f.label :website %>
-    <%= f.text_field :website %>
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <%= f.submit %>
-  <% end %>
+<div class="split right">
+ <div class= "background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('refugee.jpg') %>)">
+    <div class="centered">
+      <div class="card m-4 p-4">
+      <div class="container">
+        <div class="card-title">
+          <h2>Register Your Organisation</h2>
+        </div>
+        <%= simple_form_for(@resource) do |f| %>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+          <%= f.label :address %>
+          <%= f.text_field :address %>
+          <%= f.label :website %>
+          <%= f.text_field :website %>
+          <%= f.label :phone %>
+          <%= f.text_field :phone %>
+          <%= f.label :state %>
+          <%= f.text_field :state %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%# <%= f.label :category %>
+          <%# <%= f.text_field :category %>
+          <%= f.label :description %>
+          <%= f.text_area :description %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
