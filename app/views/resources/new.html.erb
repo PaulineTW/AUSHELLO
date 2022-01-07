@@ -18,12 +18,14 @@
             <%= bootstrap_form_for(@resource) do |f| %>
               <%= f.text_field :name %>
               <%= f.text_field :address %>
-              <%= f.text_field :website %>
-              <%= f.text_field :phone %>
+              <%= f.label :website %>
+              <%= f.text_field :website, hide_label: true, placeholder: "www.refugeehelp.com.au"%>
+              <%= f.label :phone %>
+              <%= f.text_field :phone, hide_label: true, placeholder: "(02) 1234 5678" %>
               <%= f.text_field :state %>
               <%= f.text_field :email %>
               <%# <%= f.text_field :category %>
-              <%# <%= f.category_list :category %> %>
+              <%# <%= f.category_list :category %> 
               <%= f.text_area :description %>
               <%= f.submit "Submit" , class: "btn btn-outline-dark p-2"%>
             <% end %>
