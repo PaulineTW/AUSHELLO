@@ -1,13 +1,13 @@
   <h3><%= resource.name %></h3>
-  <h6><%= resource.category1 %></h6>
-  <p>Address: <br><%= resource.address %></p>
-  <p>Contact: <br><%= resource.phone %></p>
-  <p>Description: <br><%= resource.description %></p>
-  <p>Email: <%= mail_to resource.email %></p>
+  <h6><%= resource.categories.pluck(:name).join(',') %></h6>
+  <p><%= t("Address")  %>: <br><%= resource.address %></p>
+  <p><%= t("Contact")  %>: <br><%= resource.phone %></p>
+  <p><%= t("Description") %>: <br><%= resource.description %></p>
+  <p><%= t("Email")  %>: <%= mail_to resource.email %></p>
   <br>
-  <a href="#" target="_blank">Is this information wrong?</a>
+  <a href="#" target="_blank"><%= t("Incorrect Info") %></a>
   <br>
   <br>
-  <a href="<%= resource.website %>" target="_blank">Website</a> |
-  <a href="<%= resource.phone %>">Call</a> |
-  <a href="https://www.google.com/maps/" target="_blank">Directions</a>
+  <a href="<%= resource.website %>" target="_blank"><%= t("Website")  %></a> |
+  <a href="<%= resource.phone %>"><%= t("Phone")  %></a> |
+  <a href="https://www.google.com/maps/" target="_blank"><%= t("Directions")  %></a>

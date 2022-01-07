@@ -36,6 +36,7 @@ gem 'simple_form'
 gem 'geocoder'
 gem "algoliasearch-rails"
 gem 'acts-as-taggable-on', '~> 8.1'
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'pry-byebug'
