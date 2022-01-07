@@ -9,31 +9,26 @@
 <div class="split right">
  <div class= "background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('refugee.jpg') %>)">
     <div class="centered">
-      <div class="card m-4 p-4">
-      <div class="container">
-        <div class="card-title">
-          <h2>Register Your Organisation</h2>
+      <div class="card">
+        <div class="container p-3">
+          <div class="card-title">
+            <h2>Register Your Organisation</h2>
+          </div>
+          <div class="card-body">
+            <%= bootstrap_form_for(@resource) do |f| %>
+              <%= f.text_field :name %>
+              <%= f.text_field :address %>
+              <%= f.text_field :website %>
+              <%= f.text_field :phone %>
+              <%= f.text_field :state %>
+              <%= f.text_field :email %>
+              <%# <%= f.text_field :category %>
+              <%# <%= f.category_list :category %> %>
+              <%= f.text_area :description %>
+              <%= f.submit "Submit" , class: "btn btn-outline-dark p-2"%>
+            <% end %>
+          </div>
         </div>
-        <%= simple_form_for(@resource) do |f| %>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-          <%= f.label :address %>
-          <%= f.text_field :address %>
-          <%= f.label :website %>
-          <%= f.text_field :website %>
-          <%= f.label :phone %>
-          <%= f.text_field :phone %>
-          <%= f.label :state %>
-          <%= f.text_field :state %>
-          <%= f.label :email %>
-          <%= f.text_field :email %>
-          <%# <%= f.label :category %>
-          <%# <%= f.text_field :category %>
-          <%= f.label :description %>
-          <%= f.text_area :description %>
-          <%= f.submit %>
-        <% end %>
-      </div>
       </div>
     </div>
   </div>
