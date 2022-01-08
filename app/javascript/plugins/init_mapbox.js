@@ -5,8 +5,7 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
-
+    style: 'mapbox://styles/mapbox/streets-v11'
   });
 };
 
@@ -40,6 +39,8 @@ const initMapbox = () => {
       mapboxgl: mapboxgl
     }));
   }
+  // const geocoder = document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 };
+
 
 export { initMapbox };
