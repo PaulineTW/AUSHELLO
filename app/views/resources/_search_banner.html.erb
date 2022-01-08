@@ -5,13 +5,13 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Write a city or resource here"
+        placeholder: "Seach by city or resource"
       %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
 
 <%# <h3><%= resource.name %></h3>
-<%# <h6><%= resource.categories.pluck(:name).join(',') %></h6> %> %>
+<%# <h6><%= resource.categories.pluck(:name).join(',')</h6> %>
 
     <%# <%= simple_form_for @resources do |f| %>
     <%# <%= f.input :categories,
