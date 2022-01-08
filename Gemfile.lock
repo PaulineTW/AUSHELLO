@@ -101,14 +101,6 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
-    elasticsearch (7.13.3)
-      elasticsearch-api (= 7.13.3)
-      elasticsearch-transport (= 7.13.3)
-    elasticsearch-api (7.13.3)
-      multi_json
-    elasticsearch-transport (7.13.3)
-      faraday (~> 1)
-      multi_json
     erubi (1.10.0)
     execjs (2.7.0)
     faraday (1.8.0)
@@ -136,7 +128,6 @@ GEM
     geocoder (1.7.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    hashie (5.0.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.4)
@@ -235,10 +226,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    searchkick (4.6.3)
-      activemodel (>= 5)
-      elasticsearch (>= 6, < 7.14)
-      hashie
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -301,7 +288,6 @@ DEPENDENCIES
   devise
   devise-i18n
   dotenv-rails
-  elasticsearch (< 7.14)
   font-awesome-sass
   geocoder
   jbuilder (~> 2.7)
@@ -314,7 +300,6 @@ DEPENDENCIES
   rails (~> 6.0.4, >= 6.0.4.1)
   redis (~> 4.0)
   sass-rails (>= 6)
-  searchkick (~> 4.0)
   selenium-webdriver
   simple_form
   spring

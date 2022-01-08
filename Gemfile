@@ -38,8 +38,7 @@ gem "algoliasearch-rails"
 gem 'pg_search'
 gem 'acts-as-taggable-on', '~> 8.1'
 gem 'devise-i18n'
-gem 'elasticsearch', "< 7.14" # to use a supported version of the Elasticsearch Ruby client
-gem 'searchkick', '~> 4.0'
+
 
 group :development, :test do
   gem 'pry-byebug'
@@ -69,6 +68,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-
-# gem 'dotenv-rails', groups: [:development, :test]

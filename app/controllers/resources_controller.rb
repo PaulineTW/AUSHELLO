@@ -1,13 +1,27 @@
 class ResourcesController < ApplicationController
 
 def index
-    @resources = Resource.all
-      @markers = @resources.geocoded.map do |resource|
+    # @resources = Resource.all
+    #   @markers = @resources.geocoded.map do |resource|
+    #   {
+    #     lat: resource.latitude,
+    #     lng: resource.longitude,
+    #     info_window: render_to_string(partial: "info_window", locals: { resource: resource })
+    #   }
+    # end
+
+    # puts params[:query]
+    if params[:locals].present?
+      @resources = Resource.search(params[:locals])
+    else
+      @resources = Resource.all
+         @markers = @resources.geocoded.map do |resource|
       {
         lat: resource.latitude,
         lng: resource.longitude,
         info_window: render_to_string(partial: "info_window", locals: { resource: resource })
       }
+      end
     end
   end
 

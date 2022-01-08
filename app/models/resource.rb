@@ -1,5 +1,4 @@
 class Resource < ApplicationRecord
-  searchkick
   belongs_to :user
   # has_many :favourites, dependent: :destroy
   validates :name, uniqueness: true
@@ -10,4 +9,23 @@ class Resource < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   acts_as_taggable_on :categories
+
+  include PgSearch::Model
+    pg_search_scope :search,
+    against: [ :name, :description ],
+    using: {
+      tsearch: { prefix: true,
+                any_word: true
+      }
+    }
+
+    # default_scope order: 'resources.name ASC'
+
+    # def self.text_search(query)
+    # if query.present?
+    #   search(query)
+    # else
+    #   scoped
+    # end
+  end
 end
