@@ -1,1 +1,37 @@
-<h1> This is the form for the organization to add resource</h1>
+<div class="split left">
+  <div class="centered">
+    <%= image_tag "aushello_logo.png", class:"logo" %>
+    <h3>Help us provide more services</h3>
+    <%= link_to "Back Home", resources_path, class: "btn btn-outline-dark m-5" %>
+  </div>
+</div>
+
+<div class="split right">
+ <div class= "background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('refugee.jpg') %>)">
+    <div class="centered">
+      <div class="card">
+        <div class="container p-3">
+          <div class="card-title">
+            <h2>Register Your Organisation</h2>
+          </div>
+          <div class="card-body">
+            <%= bootstrap_form_for(@resource) do |f| %>
+              <%= f.text_field :name %>
+              <%= f.text_field :address %>
+              <%= f.label :website %>
+              <%= f.text_field :website, hide_label: true, placeholder: "www.refugeehelp.com.au"%>
+              <%= f.label :phone %>
+              <%= f.text_field :phone, hide_label: true, placeholder: "(02) 1234 5678" %>
+              <%= f.text_field :state %>
+              <%= f.text_field :email %>
+              <%# <%= f.text_field :category %>
+              <%# <%= f.category_list :category %> 
+              <%= f.text_area :description %>
+              <%= f.submit "Submit" , class: "btn btn-outline-dark p-2"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
