@@ -1,6 +1,7 @@
 class ResourcesController < ApplicationController
-
+before_action :set_locale
 def index
+  # binding.pry
     @resources = Resource.all
       @markers = @resources.geocoded.map do |resource|
       {
@@ -29,7 +30,7 @@ def index
   private
 
   def resource_params
-    params.require(:resource).permit(:name,:description, :address, :website, :phone, :state, :email, :status, :category_list)
+      params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status, :category_list)
   end
 
 end
