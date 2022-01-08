@@ -5,4 +5,24 @@
 </div>
 
 
+<div id="main">
+  <div id="top">
+  </div>
+  <div id="bottom">
+    <div id="lists">
+      <div class="sidenav">
+        <% @resources.each do |resource| %>
+        <div class= "card m-2 p-2">
+          <div class= "resource_infos">
+              <p class="name"><%= resource.name %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <%# <div id="geocoder" class="geocoder"></div> %>
+
