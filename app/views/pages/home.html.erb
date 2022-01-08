@@ -3,30 +3,18 @@
     <div class="centered">
       <div class="card p-4">
         <div class="card-title">
-          <h2><%= t("Welcome") %></h2>
+        <h2><%= t("Welcome") %></h2>
         </div>
         <div>
-          <input type="radio" id="english" name="drone" value="english"
-                checked>
-          <label for="English"><%= t("English")  %></label>
+          <%= link_to t("English"), root_path(lang: :en) %>
         </div>
+        <br />
         <div>
-          <input type="radio" id="dewey" name="spanish" value="spanish">
-          <label for="Spanish"><%= t("Spanish") %></label>
+          <%= link_to t("Spanish"), root_path(lang: :es) %>
         </div>
+        <br />
         <div>
-          <input type="radio" id="persian" name="drone" value="persian">
-          <label for="Persian">فارسی, fārsi</label>
-        </div>
-        <div>
-          <input type="radio" id="arabic" name="drone" value="arabic"
-                checked>
-          <label for="Arabic">العربية</label>
-        </div>
-        <div>
-          <input type="radio" id="burmese" name="drone" value="burmese"
-                checked>
-          <label for="Burmese">ဗမာဘာသာစကား</label>
+          <%= link_to t("Arabic"), root_path(lang: :ar) %>
         </div>
       </div>
     </div>
