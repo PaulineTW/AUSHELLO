@@ -1,4 +1,5 @@
 class Resource < ApplicationRecord
+  searchkick
   belongs_to :user
   # has_many :favourites, dependent: :destroy
   validates :name, uniqueness: true
