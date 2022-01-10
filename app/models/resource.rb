@@ -10,20 +10,18 @@ class Resource < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   acts_as_taggable_on :categories
 
-  include PgSearch::Model
-    pg_search_scope :search,
-    against: [ :name, :description, :state, :address ],
-    using: {
-      tsearch: { prefix: true,
-                any_word: true
-      }
-    }
+  # include PgSearch::Model
+  #   pg_search_scope :search,
+  #   against: [ :name, :description, :state, :address ],
+  #   using: {
+  #     tsearch: { prefix: true,
+  #               any_word: true
+  #     }
+  #   }
 
-  # def self.search(query)
-  #   if query.present?
-  #     search(query)
-  #   else
-  #     order("resources.name ASC")
-  #   end
-  # end
+  include AlgoliaSearch
+  algoliasearch do
+
+  end
+
 end
