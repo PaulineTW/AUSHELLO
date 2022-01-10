@@ -20,8 +20,6 @@ class Resource < ApplicationRecord
   #   }
 
   include AlgoliaSearch
-  algoliasearch do
-
-  end
+  algoliasearch do;  end
 
 end
