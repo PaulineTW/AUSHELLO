@@ -12,20 +12,18 @@ class Resource < ApplicationRecord
 
   include PgSearch::Model
     pg_search_scope :search,
-    against: [ :name, :description ],
+    against: [ :name, :description, :state, :address ],
     using: {
       tsearch: { prefix: true,
                 any_word: true
       }
     }
 
-    # default_scope order: 'resources.name ASC'
-
-    # def self.search(query)
-    # if query.present?
-    #   search(query)
-    # else
-    #   scoped
-    # end
+  # def self.search(query)
+  #   if query.present?
+  #     search(query)
+  #   else
+  #     order("resources.name ASC")
+  #   end
   # end
 end

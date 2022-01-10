@@ -6,6 +6,8 @@ const buildMap = (mapElement) => {
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11'
+    // center: [25.2744, 133.7751]
+    // center: myLatlng
   });
 };
 
