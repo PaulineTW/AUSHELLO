@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :favourites, only: [:create, :destroy]
   end
   resources :users, only: [:show]
+  get '/tagged', to: "resources#tagged", as: :tagged
 end

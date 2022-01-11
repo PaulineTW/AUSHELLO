@@ -3,7 +3,7 @@ before_action :set_locale
 
 def index
     if params[:query].present?
-      # || params[:category]
+      # || params[:category].present?
       @resources = Resource.search(params[:query])
       # && Resource.tagged_with(params[:category])
         @markers = @resources.geocoded.map do |resource|
@@ -25,6 +25,17 @@ def index
     end
   end
 
+  # def search_by_category
+  #   @resources = Resource.tagged_with(params[:category])
+  # end
+
+  def tagged
+    if params[:tag].present?
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.all
+    end
+  end
 
   def new
     @resource = Resource.new

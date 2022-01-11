@@ -8,6 +8,8 @@ class Resource < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   acts_as_taggable_on :categories
 
+  $categories = ["Legal", "Health", "Housing", "Education", "Visa", "Employment", "Every day", "Financial help", "Community"]
+
   include PgSearch::Model
     pg_search_scope :search,
     against: [ :name, :description ],
