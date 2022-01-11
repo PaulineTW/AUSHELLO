@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:show, :index, :new, :create]
 end
 
+puts I18n.locale
+
 def extract_locale
   parsed_locale = language_params[:lang]
   I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
