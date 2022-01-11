@@ -21,7 +21,7 @@ puts 'creating resources...'
 
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-csv_text = Rails.root.join('lib', 'seeds', 'sample_seed_taggable.csv')
+csv_text = Rails.root.join('lib', 'seeds', 'AH_seed.csv')
 puts csv_text
 CSV.foreach(csv_text, csv_options) do |row|
   t = Resource.new
