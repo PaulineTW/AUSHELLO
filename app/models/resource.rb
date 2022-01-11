@@ -19,13 +19,7 @@ class Resource < ApplicationRecord
       }
     }
 
-    # default_scope order: 'resources.name ASC'
+  # include AlgoliaSearch
+  # algoliasearch do;  end
 
-    # def self.search(query)
-    # if query.present?
-    #   search(query)
-    # else
-    #   scoped
-    # end
-  # end
 end
