@@ -1,8 +1,8 @@
 class Resource < ApplicationRecord
   belongs_to :user
   # has_many :favourites, dependent: :destroy
-  validates :name, uniqueness: true
-  validates :name, :address, :website, :state, presence: true
+  # validates :name, uniqueness: true
+  validates :name, :state, presence: true
   # validates :phone, length: { is: 10 }
   # validates :categories, inclusion: { in: ["Legal", "Health", "Housing", "Education", "Visa", "Employment", "Every day", "Financial help", "Community"]}
   # CATEGORIES = ["Legal", "Health", "Housing", "Education", "Visa", "Employment", "Every day", "Financial help", "Community"]
