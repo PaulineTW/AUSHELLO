@@ -1,14 +1,16 @@
 class ResourcesController < ApplicationController
 before_action :set_locale
+
 def index
     if params[:query].present?
+      # || params[:category]
       @resources = Resource.search(params[:query])
+      # && Resource.tagged_with(params[:category])
         @markers = @resources.geocoded.map do |resource|
       {
         lat: resource.latitude,
         lng: resource.longitude,
         info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
-        # search_banner: render_to_string(partial: "search_banner", locals: { resource: resource })
       }
     end
     else
@@ -18,11 +20,11 @@ def index
         lat: resource.latitude,
         lng: resource.longitude,
         info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
-        # search_banner: render_to_string(partial: "search_banner", locals: { resource: resource })
       }
       end
     end
   end
+
 
   def new
     @resource = Resource.new
