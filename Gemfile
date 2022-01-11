@@ -38,6 +38,7 @@ gem "algoliasearch-rails"
 gem 'acts-as-taggable-on', '~> 8.1'
 gem 'devise-i18n'
 gem "bootstrap_form", "~> 5.0"
+gem 'acts_as_favoritor'
 
 group :development, :test do
   gem 'pry-byebug'

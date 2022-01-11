@@ -1,0 +1,7 @@
+<h3><%= resource.name %></h3>
+  <h6><%= resource.categories.pluck(:name).join(',') %></h6>
+  <p><%= t("Address")  %>: <br><%= resource.address %></p>
+  <p><%= t("Contact")  %>: <br><%= resource.phone %></p>
+  <p><%= t("Description") %>: <br><%= resource.description %></p>
+  <p><%= t("Email")  %>: <%= mail_to resource.email %></p>
+  <br>
