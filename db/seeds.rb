@@ -17,7 +17,7 @@ user3 = User.create!(email: 'pauline@user2.com', password: 'password')
 
 puts "Created #{User.count} users ..."
 
-puts 'creating sample resources...'
+puts 'creating resources...'
 
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
