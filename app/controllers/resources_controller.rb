@@ -28,20 +28,20 @@ class ResourcesController < ApplicationController
       end
     end
 
-    def favourite
-      type = params[:type]
-      case type
-      when "favourite"
-        current_user.favourites << @resource
-        redirect_back fallback_location: resources_path, notice: "You favourited #{@resource.name}"
+    # def favourite
+    #   type = params[:type]
+    #   case type
+    #   when "favourite"
+    #     current_user.favourites << @resource
+    #     redirect_back fallback_location: resources_path, notice: "You favourited #{@resource.name}"
 
-      when "unfavourite"
-        current_user.favourites.delete(@resource)
-        redirect_back fallback_location: resources_path, notice: "You unfavourited #{@resource.name}"
-      else
-        redirect_back fallback_location: resources_path, notice: 'Nothing happened.'
-      end
-    end
+    #   when "unfavourite"
+    #     current_user.favourites.delete(@resource)
+    #     redirect_back fallback_location: resources_path, notice: "You unfavourited #{@resource.name}"
+    #   else
+    #     redirect_back fallback_location: resources_path, notice: 'Nothing happened.'
+    #   end
+    # end
 
 
     def set_resource
