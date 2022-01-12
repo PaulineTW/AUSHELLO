@@ -1,12 +1,7 @@
 <%# <% if @resource.favourited_by.include?(current_user) %>
 
+<%= link_to icon('fas', 'heart'), resource_favourites_path(resource, :id => resource.id) %>
 
-    <%= link_to icon('fas', 'heart'), resource_favourites_path(resource, :id => resource.id) %>
-
-<%#
-<form>
-	<input type="submit" value="Favourite">
-</form> %>
 
   <h3><%= resource.name %></h3>
   <h6><%= resource.categories.pluck(:name).join(',') %></h6>
