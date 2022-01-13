@@ -1,17 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-    # resources :resources, except: :show do
-    #   # collection do
-    #   # get 'top'
-    #   # resources :favourites, only: [:index]
-    #   end
 
 resources :resources do
   # put :favourite, on: :member
-  resources :favourites, only: %i[new index create]
+  resources :favourites, only: %i[create]
 end
 
+resources :favourites, only: [:destroy]
 
   resources :users, only: [:show] do
     resources :dashboard, only: [:index]

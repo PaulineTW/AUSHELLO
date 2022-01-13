@@ -1,27 +1,19 @@
 class FavouritesController < ApplicationController
 
-  before_action :set_favourite, only: %i[destroy]
+  before_action :authenticate_user!
+
 
   def create
-    puts params[:id]
     @favourite = Favourite.new
-    # @resource = Resource.find(params[:resource_id])
-    # if @resource.user_id != current_user.id   #You can register favourites other than your own resources
-    # # @favourite = Favourite.create(user_id: current_user.id, resource_id: @resource.id)
-    # end
+    @favourite.user = current_user
+    @resource = Resource.find(params[:resource_id])
+    @favourite.resource = @resource
+    @favourite.save
   end
 
   def destroy
-    @resource = resource.find(params[:resource_id])
-    @favourite = Favourite.find_by(user_id: current_user.id, resource_id: @resource.id)
+    @favourite = Favourite.find(params[:id])
     @favourite.destroy
-  end
-
-
-  private
-
- def set_favourite
-  @resource = Resource.find(params[:resource_id])
   end
 
 end

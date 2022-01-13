@@ -1,1 +1,10 @@
 <h1>hello</h1>
+<% @favourites.each do |favourite|%>
+<h3><%= favourite.resource.name %></h3>
+  <h6><%= favourite.resource.categories.pluck(:name).join(',') %></h6>
+  <p><%= t("Address")  %>: <br><%= favourite.resource.address %></p>
+  <p><%= t("Contact")  %>: <br><%= favourite.resource.phone %></p>
+  <p><%= t("Description") %>: <br><%= favourite.resource.description %></p>
+  <p><%= t("Email")  %>: <%= mail_to favourite.resource.email %></p>
+  <br>
+<% end %>

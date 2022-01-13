@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
 
 def index
-  @user = User.find(params[:user_id])
+  @favourites = Favourite.where(user: current_user)
 end
 end
