@@ -2,40 +2,47 @@ class ResourcesController < ApplicationController
 before_action :set_locale
 
 def index
-    if params[:query].present?
-      # || params[:category].present?
+  @tags = ActsAsTaggableOn::Tag.all
+  # if params[:keywords]
+  # @filters = params[:keywords]
+  # @resources = @filters.nil? ? Resource.all : Resource.where(id: Resource.all.tagged_with(@filters, any: true).reject(&:blank?).map(&:id))
+  #     @markers = @resources.geocoded.map do |resource|
+  #     {
+  #       lat: resource.latitude,
+  #       lng: resource.longitude,
+  #       info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+  #     }
+  #   end
+
+
+  if params[:query].present?
       @resources = Resource.search(params[:query])
-      # && Resource.tagged_with(params[:category])
-        @markers = @resources.geocoded.map do |resource|
+      #   @markers = @resources.geocoded.map do |resource|
+      # {
+      #   lat: resource.latitude,
+      #   lng: resource.longitude,
+      #   info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+      # }
+      # end
+
+  else
+    @resources = Resource.all
+    # @markers = @resources.geocoded.map do |resource|
+    #   {
+    #     lat: resource.latitude,
+    #     lng: resource.longitude,
+    #     info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+    #   }
+    # end
+  end
+      @markers = @resources.geocoded.map do |resource|
       {
         lat: resource.latitude,
         lng: resource.longitude,
         info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
       }
     end
-    else
-      @resources = Resource.all
-         @markers = @resources.geocoded.map do |resource|
-      {
-        lat: resource.latitude,
-        lng: resource.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
-      }
-      end
-    end
-  end
-
-  # def search_by_category
-  #   @resources = Resource.tagged_with(params[:category])
-  # end
-
-  def tagged
-    if params[:tag].present?
-      @posts = Post.tagged_with(params[:tag])
-    else
-      @posts = Post.all
-    end
-  end
+end
 
   def new
     @resource = Resource.new

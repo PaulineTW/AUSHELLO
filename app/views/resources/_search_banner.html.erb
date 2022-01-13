@@ -5,7 +5,7 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Seach resource by city"
+          placeholder: "enter your location"
         %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
@@ -16,7 +16,19 @@
 
     <div class="col-md-6 mb-4">
       <div class="list-group list-group-horizontal text-center">
-          <div class="list-group-item m-2 shadow-lg">
+      <%= simple_form_for :search, url: resources_path, method: "GET" do |f| %>
+        <% @tags.each do |tag|  %>
+          <div>
+            <%= check_box_tag "keywords[]", tag.name, @selected_tag.present? ? @selected_tag.include?(tag.name) : '' %>
+            <%= tag.name %>
+          </div>
+        <% end %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+          <%= link_to "Reset", resources_path  %>
+        <% end %>
+
+
+          <%# <div class="list-group-item m-2 shadow-lg">
             <p class="mb-0"><i class="fas fa-user-md fa-3x m-2 grey p-3 white-text rounded-circle shadow-lg" aria-hidden="true"></i>Health</p>
           </div>
           <div class="list-group-item m-2">
@@ -42,7 +54,7 @@
           </div>
           <div class="list-group-item m-2">
             <p class="mb-0"><i class="fas fa-users fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i>Community</p>
-          </div>
+          </div> %>
         </div>
       </div>
 

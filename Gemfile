@@ -36,7 +36,7 @@ gem 'simple_form'
 gem 'geocoder'
 gem "algoliasearch-rails"
 gem 'pg_search'
-gem 'acts-as-taggable-on', '~> 8.1'
+gem 'acts-as-taggable-on', '~> 9.0'
 gem 'devise-i18n'
 gem "bootstrap_form", "~> 5.0"
 
