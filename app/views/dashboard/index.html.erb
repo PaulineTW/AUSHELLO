@@ -1,10 +1,25 @@
-<h1>hello</h1>
-<% @favourites.each do |favourite|%>
-<h3><%= favourite.resource.name %></h3>
-  <h6><%= favourite.resource.categories.pluck(:name).join(',') %></h6>
-  <p><%= t("Address")  %>: <br><%= favourite.resource.address %></p>
-  <p><%= t("Contact")  %>: <br><%= favourite.resource.phone %></p>
-  <p><%= t("Description") %>: <br><%= favourite.resource.description %></p>
-  <p><%= t("Email")  %>: <%= mail_to favourite.resource.email %></p>
-  <br>
-<% end %>
+
+
+<div class="dashboard_banner">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('dashboard_banner.png') %>)">
+    <h1>My Dashboard</h1>
+  </div>
+</div>
+
+ <div class="container">
+  <div class="tab-wrap">
+    <!-- active tab on page load gets checked attribute -->
+    <input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
+    <label for="tab1">My Favourites</label>
+
+    <input type="radio" id="tab2" name="tabGroup1" class="tab">
+    <label for="tab2">My Approvals</label>
+
+    <div class="tab__content">
+       <%= render "myfavourites" %>
+    </div>
+     <div class="tab__content">
+      <%= render "myapprovals" %>
+  </div>
+ </div>
+</div>
