@@ -50,4 +50,3 @@ def index
       params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status,:category_list, :user_id)
     end
   end
-end
