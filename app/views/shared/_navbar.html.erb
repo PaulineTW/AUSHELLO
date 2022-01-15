@@ -13,7 +13,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://www.aquaknect.com.au/wp-content/uploads/2014/03/blank-person.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Favourites", "#", class: "dropdown-item" %>
+            <%= link_to "My dashboard", user_dashboard_index_path(current_user), class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

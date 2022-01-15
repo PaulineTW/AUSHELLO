@@ -1,0 +1,64 @@
+.tabs-container {
+  max-width: 1000px;
+  margin: 16px auto;
+  padding: 16px;
+  height: 500px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tabs li:not(:last-child) {
+  margin-right: 7px;
+}
+
+.tabs li a {
+  display: block;
+  position: relative;
+  top: 4px;
+  padding: 10px 25px;
+  border-radius: 2px 2px 0 0;
+  background: white;
+  opacity: 0.7;
+  transition: all 0.1s ease-in-out;
+  text-decoration: none;
+  color: #4C4C4C;
+  font-size: 24px;
+}
+
+.tabs li.active a,
+.tabs li a:hover {
+  opacity: 1;
+  top: 0;
+}
+
+.tabs-content {
+  position: relative;
+  z-index: 2;
+  padding: 25px;
+  border-radius: 0 4px 4px 4px;
+  background: white;
+}
+
+.tabs-panel {
+  display: none;
+}
+
+.tabs-panel.active {
+  display: block;
+}
+
+.favorite-icon-dashboard{
+  position: relative;
+  bottom: 100px;
+  left: 700px;
+  margin-left: 1rem;
+  color: #0957EF;
+  font-size: 1.5rem;
+  &:hover {
+    color: #0957EF;
+    font-size: 1.7rem;
+  }
+
+}

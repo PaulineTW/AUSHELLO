@@ -1,0 +1,24 @@
+
+<div class="col-11 col-lg-16 mb-5">
+<% @favourites.each do |favourite|%>
+<div class="card-product" >
+<%=image_tag "contact.png"%>
+  <div class="card-product-infos">
+    <h2><strong><%= favourite.resource.name %></strong></h2>
+    <p><%= t("Address")  %>: <%= favourite.resource.address %></p>
+    <p><%= t("Contact")  %>: <%= favourite.resource.phone %></p>
+    <div class="button">
+    <%= link_to 'Website',"#{favourite.resource.website}", target: '_blank', :class => "btn btn-light text-decoration-none " %>
+    </div>
+
+  <% if favourite.resource.favourited_by_user?(current_user) %>
+  <%= link_to icon('fas', 'heart'), favourite_path(favourite), class: "favorite-icon-dashboard", method: :delete, remote: true %>
+  <% else %>
+  <%= link_to icon('far', 'heart'), resource_favourites_path(resource), class: "favorite-icon-dashboard", method: :put, remote: true %>
+  <% end %>
+  </div>
+
+</div>
+  <% end %>
+
+</div>

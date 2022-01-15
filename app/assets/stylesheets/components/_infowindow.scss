@@ -22,3 +22,24 @@
   padding-bottom: 25px;
   width: 100%;
 }
+
+// .favorite-icon-index {
+//     position: absolute;
+//     top: 15px;
+//     right: 15px;
+//     margin-left: 1rem;
+//     color: rgba(243,85,76,0.8);
+//     font-size: 1.3rem;
+//     &:hover {
+//       color: rgba(243,85,76,1);
+//       font-size: 1.4rem;
+// }
+
+.favourite-icon {
+  margin-left: 1rem;
+  color: rgba(243,85,76,0.8);
+  font-size: 2rem;
+  &:hover {
+    color: rgba(243,85,76,1);
+    font-size: 2.1rem;
+  }}
