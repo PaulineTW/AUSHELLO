@@ -17,11 +17,11 @@ user3 = User.create!(email: 'pauline@user2.com', password: 'password')
 
 puts "Created #{User.count} users ..."
 
-puts 'creating sample resources...'
+puts 'creating resources...'
 
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-csv_text = Rails.root.join('lib', 'seeds', 'sample_seed_taggable.csv')
+csv_text = Rails.root.join('lib', 'seeds', 'AUSHELLO_seeds_real.csv')
 puts csv_text
 CSV.foreach(csv_text, csv_options) do |row|
   t = Resource.new
