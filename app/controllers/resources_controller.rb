@@ -4,33 +4,31 @@ class ResourcesController < ApplicationController
 
   def index
     @tags = ActsAsTaggableOn::Tag.all
-    @filters = params[:keywords]
+    categories = params[:keywords]
+    location = params[:query]
 
-    if @filters.nil? || !params[:keywords]
-      @resources = Resource.all
+    # if we only filter by categories and have no location
+    if categories.present? && location == ""
+      @resources = Resource.where(id: Resource.all.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
+    # if we only filter by location, but not categories
+    elsif location.present? && categories.nil?
+      @resources = Resource.near(location, 100)
+    # if we filter by both categories and location
+    elsif categories.present? && location != ""
+      resources_location = Resource.near(location, 100)
+      @resources = resources_location.where(id: resources_location.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
     else
-      @resources = Resource.where(id: Resource.all.tagged_with(@filters, any: true).reject(&:blank?).map(&:id))
+      # no filters applied
+      @resources = Resource.all
     end
-    # if params[:query].present?
-    #   @resources = Resource.search(params[:query])
 
-    #     @markers = @resources.geocoded.map do |resource|
-    #   {
-    #     lat: resource.latitude,
-    #     lng: resource.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
-    #   }
-    # end
-    # else
-    #   @resources = Resource.all
-    #      @markers = @resources.geocoded.map do |resource|
-    #   {
-    #     lat: resource.latitude,
-    #     lng: resource.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
-    #   }
-    #   end
-    # @resources = Resource.all
+    @markers = @resources.geocoded.map do |resource|
+      {
+        lat: resource.latitude,
+        lng: resource.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+      }
+    end
   end
 
 
