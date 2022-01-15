@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
-
-resources :resources do
-  # put :favourite, on: :member
-  resources :favourites, only: %i[create]
-end
-
-resources :favourites, only: [:destroy]
-
-  resources :users, only: [:show] do
-    resources :dashboard, only: [:index]
-end
-
+  scope "(:locale)", locale: /en|es|ar/ do
+    devise_for :users
+    root to: 'pages#home'
+    resources :resources, except: :show do
+      collection do
+        get 'top'
+      end
+      resources :favourites, only: [:create, :destroy]
+    end
+    resources :users, only: [:show] do
+      resources :dashboard, only: [:index]
+    end
+  end
 end
