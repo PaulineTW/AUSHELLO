@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
+  scope "(:locale)", locale: /en|es|ar/ do
+    devise_for :users
+    root to: 'pages#home'
     resources :resources, except: :show do
       collection do
-      get 'top'
+        get 'top'
+      end
+      resources :favourites, only: [:create, :destroy]
     end
-    resources :favourites, only: [:create, :destroy]
+    resources :users, only: [:show]
   end
-  resources :users, only: [:show]
 end

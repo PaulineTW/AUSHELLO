@@ -13,7 +13,7 @@ end
 private
 
 def set_locale
-  I18n.locale = language_params[:lang] || locale_from_header || I18n.default_locale
+  I18n.locale = params[:locale] || language_params[:lang] || locale_from_header || I18n.default_locale
 end
 
 def locale_from_header
