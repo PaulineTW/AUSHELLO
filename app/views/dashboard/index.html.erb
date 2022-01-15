@@ -1,0 +1,25 @@
+
+
+<div class="dashboard_banner">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('dashboard_banner.png') %>)">
+    <h1>My Dashboard</h1>
+  </div>
+</div>
+
+ <div class="container">
+  <div class="tab-wrap">
+    <!-- active tab on page load gets checked attribute -->
+    <input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
+    <label for="tab1">My favourites</label>
+
+    <input type="radio" id="tab2" name="tabGroup1" class="tab">
+    <label for="tab2">My resources</label>
+
+    <div class="tab__content">
+       <%= render "myfavourites" %>
+    </div>
+     <div class="tab__content">
+      <%= render "myresources" %>
+  </div>
+ </div>
+</div>

@@ -1,11 +1,12 @@
 class ResourcesController < ApplicationController
-before_action :set_locale
+  skip_before_action :authenticate_user!, only: %i[index]
+  before_action :set_resource, only: %i[favourite]
+  before_action :set_locale
 
 def index
     if params[:query].present?
-      # || params[:category]
       @resources = Resource.search(params[:query])
-      # && Resource.tagged_with(params[:category])
+
         @markers = @resources.geocoded.map do |resource|
       {
         lat: resource.latitude,
@@ -30,21 +31,23 @@ def index
     @resource = Resource.new
   end
 
-  def create
-    @resource = Resource.new(resource_params)
-    @resource.user = current_user
-    if @resource.valid?
-      @resource.save
-      redirect_to resource_path(@resource)
-    else
-      render :new
+    def create
+      @resource = Resource.new(resource_params)
+      @resource.user = current_user
+      if @resource.valid?
+        @resource.save
+        redirect_to resource_path(@resource)
+      else
+        render :new
+      end
     end
-  end
-
-  private
 
   def resource_params
     params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status, :category_list)
   end
 
+    def resource_params
+      params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status,:category_list, :user_id)
+    end
+  end
 end

@@ -1,3 +1,10 @@
+<% favourite = resource.favourited_by_user?(current_user) %>
+<% if favourite %>
+  <%= link_to icon('fas', 'heart'), favourite_path(favourite), method: :delete, remote: true %>
+<% else %>
+  <%= link_to icon('far', 'heart'), resource_favourites_path(resource), method: :post, remote: true %>
+<% end %>
+
   <h3><%= resource.name %></h3>
   <h6><%= resource.categories.pluck(:name).join(',') %></h6>
   <p><%= t("Address")  %>: <br><%= resource.address %></p>
@@ -8,6 +15,7 @@
   <%= link_to "#newTag", data: { toggle: "modal" } do %>
     <i class="fa fa-wrench"></i> Is this information wrong?
   <% end %>
+
   <br>
   <br>
   <a href="<%= resource.website %>" target="_blank"><%= t("Website")  %></a> |
