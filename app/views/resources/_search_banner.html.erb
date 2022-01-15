@@ -1,4 +1,5 @@
 <div class="container">
+
   <div id="seach-banner">
     <div class= "container m-4">
       <%= form_tag resources_path, method: :get do %>
@@ -13,7 +14,6 @@
 
   <div class="categories">
     <h3>Seach resource by category</h3>
-
     <div class="col-md-6 mb-4">
       <div class="list-group list-group-horizontal text-center">
       <%= simple_form_for :search, url: resources_path, method: "GET" do |f| %>
@@ -27,8 +27,18 @@
           <%= link_to "Reset", resources_path  %>
         <% end %>
 
+<%# <%= simple_form_for :search, url: resources_path, method: "GET" do |f| %>
+<%# <%= f.input :category,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Resource::CATEGORIES %>
+<%# <% end %>
 
-          <%# <div class="list-group-item m-2 shadow-lg">
+
+          <div class="list-group-item m-2 shadow-lg">
             <p class="mb-0"><i class="fas fa-user-md fa-3x m-2 grey p-3 white-text rounded-circle shadow-lg" aria-hidden="true"></i>Health</p>
           </div>
           <div class="list-group-item m-2">
@@ -54,7 +64,8 @@
           </div>
           <div class="list-group-item m-2">
             <p class="mb-0"><i class="fas fa-users fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i>Community</p>
-          </div> %>
+          </div>
+
         </div>
       </div>
 
