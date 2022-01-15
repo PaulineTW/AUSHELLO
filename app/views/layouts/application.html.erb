@@ -14,8 +14,8 @@
   <body>
     <% unless action_name == "home" %>
       <%= render 'shared/navbar' %>
-      <%= render 'resources/search_banner' %>
     <% end %>
+      <%= render 'resources/search_banner' if current_page?(resources_path) %>
       <%= render 'shared/flashes' %>
       <%= render "shared/modal" %>
     <%= yield %>
