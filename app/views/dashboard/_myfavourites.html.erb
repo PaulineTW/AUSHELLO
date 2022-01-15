@@ -8,7 +8,7 @@
     <p><%= t("Address")  %>: <%= favourite.resource.address %></p>
     <p><%= t("Contact")  %>: <%= favourite.resource.phone %></p>
     <div class="button">
-    <%= link_to 'Website',"#{favourite.resource.website}", target: '_blank', :class => "btn btn-light text-decoration-none " %>
+    <%= link_to t("Website"),"#{favourite.resource.website}", target: '_blank', :class => "btn btn-light text-decoration-none " %>
     </div>
 
   <% if favourite.resource.favourited_by_user?(current_user) %>
