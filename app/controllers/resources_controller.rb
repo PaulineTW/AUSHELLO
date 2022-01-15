@@ -3,26 +3,32 @@ class ResourcesController < ApplicationController
   before_action :set_locale
 
 def index
-    if params[:query].present?
-      @resources = Resource.search(params[:query])
+  @tags = ActsAsTaggableOn::Tag.all
+  if params[:keywords]
+  @filters = params[:keywords]
+  @resources = @filters.nil? ? Resource.all : Resource.where(id: Resource.all.tagged_with(@filters, any: true).reject(&:blank?).map(&:id))
 
-        @markers = @resources.geocoded.map do |resource|
-      {
-        lat: resource.latitude,
-        lng: resource.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
-      }
+    # if params[:query].present?
+    #   @resources = Resource.search(params[:query])
+
+    #     @markers = @resources.geocoded.map do |resource|
+    #   {
+    #     lat: resource.latitude,
+    #     lng: resource.longitude,
+    #     info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+    #   }
+    # end
+    # else
+    #   @resources = Resource.all
+    #      @markers = @resources.geocoded.map do |resource|
+    #   {
+    #     lat: resource.latitude,
+    #     lng: resource.longitude,
+    #     info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+    #   }
+    #   end
     end
-    else
-      @resources = Resource.all
-         @markers = @resources.geocoded.map do |resource|
-      {
-        lat: resource.latitude,
-        lng: resource.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
-      }
-      end
-    end
+    @resources = Resource.all
   end
 
 

@@ -10,8 +10,6 @@
       <% end %>
     </div>
 
-  <div class="categories">
-    <h3>Categories</h3>
 
 
 <%# @resources.each do |resource| %>
@@ -20,16 +18,34 @@
   <%# </div> %>
 
 
+<div class="categories">
+    <h3>Categories</h3>
+      <%= simple_form_for :search, url: resources_path, method: "GET" do |f| %>
+        <% @tags.each do |tag|  %>
+          <div>
+            <%= check_box_tag "keywords[]", tag.name, @selected_tag.present? ? @selected_tag.include?(tag.name) : '' %>
+            <%= tag.name %>
+          </div>
+        <% end %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+          <%= link_to "Reset", resources_path  %>
+        <% end %>
+
+  </div>
 
 
-    <%# <%= simple_form_for @resources do |f| %>
-    <%# <%= f.input :categories,
+
+
+
+
+    <%#= simple_form_for @resources do |f| %>
+    <%#= f.input :categories,
               as: :radio_buttons,
               collection_wrapper_category: 'div',
               collection_wrapper_class: 'category-wrapper',
               item_wrapper_class: 'category-item',
               input_html: {class: 'category-selector'},
               collection: Snippet::CATEGORIES %>
-    <%# <% end %>
-  </div>
-</div>
+    <%# end %>
+  <%# </div>
+</div> %>
