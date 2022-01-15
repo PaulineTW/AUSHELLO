@@ -1,6 +1,5 @@
 class ResourcesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
-  before_action :set_resource, only: %i[favourite]
   before_action :set_locale
 
 def index
@@ -42,11 +41,8 @@ def index
       end
     end
 
-  def resource_params
-    params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status, :category_list)
-  end
-
     def resource_params
       params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status,:category_list, :user_id)
     end
+
   end
