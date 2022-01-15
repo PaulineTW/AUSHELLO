@@ -1,9 +1,8 @@
 class Resource < ApplicationRecord
   belongs_to :user
-
   has_many :favourites, dependent: :destroy
-  validates :name, uniqueness: true
-  validates :name, :address, :website, :state, presence: true
+  # validates :name, uniqueness: true
+  validates :name, :state, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   acts_as_taggable_on :categories
@@ -22,7 +21,7 @@ class Resource < ApplicationRecord
       }
     }
 
-  include AlgoliaSearch
-  algoliasearch do;  end
+  # include AlgoliaSearch
+  # algoliasearch do;  end
 
 end
