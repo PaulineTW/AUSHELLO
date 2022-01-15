@@ -8,7 +8,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Add a Resource", "#", class: "nav-link" %>
+          <%= link_to "Add a Resource", new_resource_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://www.aquaknect.com.au/wp-content/uploads/2014/03/blank-person.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
