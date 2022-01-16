@@ -10,9 +10,9 @@
       <%= link_to icon('far', 'heart'), resource_favourites_path(resource), method: :post, remote:true, data: {update_fave_button_target: "button", action: 'click->update-fave-button#fave'} %>
     <% end %>
   </div>
-</div>
 
 
+  <div  data-update-fave-button-target="resources">
   <h3><%= resource.name %></h3>
   <h6><%= resource.categories.pluck(:name).join(',') %></h6>
   <p><%= t("Address")  %>: <br><%= resource.address %></p>
@@ -29,3 +29,5 @@
   <a href="<%= resource.website %>" target="_blank"><%= t("Website")  %></a> |
   <a href="<%= resource.phone %>"><%= t("Phone")  %></a> |
   <a href="https://www.google.com/maps/" target="_blank"><%= t("Directions")  %></a>
+</div>
+</div>

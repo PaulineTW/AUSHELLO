@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ["items", "button"];
+  static targets = ["items", "button", "resources"];
   connect() {
     console.log(this.itemsTarget);
     console.log(this.buttonTarget);
@@ -20,7 +20,8 @@ export default class extends Controller {
     console.log(this.itemsTarget.getElementsByTagName('a')[0].getAttribute("data-action"))
     var fav_item_elem = this.itemsTarget.getElementsByTagName('a')[0]
     fav_item_elem.setAttribute("data-action", "click->update-fave-button#unfave")
-    // console.log(fav_item_elem.getAttribute("data-action"))
+    // alert("You have favourited " + this.resourcesTarget.getElementsByTagName('h3')[0].innerHTML + ".")
+    // // console.log(fav_item_elem.getAttribute("data-action"))
   }
 
   unfave(event) {
