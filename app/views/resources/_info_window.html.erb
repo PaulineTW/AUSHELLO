@@ -28,6 +28,7 @@
   <br>
   <a href="<%= resource.website %>" target="_blank"><%= t("Website")  %></a> |
   <a href="<%= resource.phone %>"><%= t("Phone")  %></a> |
-  <a href="https://www.google.com/maps/" target="_blank"><%= t("Directions")  %></a>
+  <a href="<%= "https://www.google.com/maps/dir//" + resource.address.gsub(" ", "+") %>" target="_blank"><%= t("Directions")  %></a>
+
 </div>
 </div>
