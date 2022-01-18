@@ -1,5 +1,5 @@
 <div class="split left">
-  <div class="centered">
+  <div class="centered ">
     <%= image_tag "aushello_logo.png", class:"logo" %>
     <h3>Help us provide more services</h3>
     <%= link_to "Back Home", resources_path, class: "btn btn-outline-dark m-5" %>
@@ -10,28 +10,24 @@
  <div class= "background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('refugee.jpg') %>)">
     <div class="centered">
       <div class="card">
-        <div class="container p-3">
+        <div class="container">
           <div class="card-title">
             <h2>Register Your Organisation</h2>
           </div>
           <div class="card-body">
-            <%= bootstrap_form_for(@resource) do |f| %>
-              <%= f.text_field :name %>
-              <%= f.text_field :address %>
-              <%= f.label :website %>
-              <%= f.text_field :website, hide_label: true, placeholder: "www.refugeehelp.com.au"%>
-              <%= f.label :phone %>
-              <%= f.text_field :phone, hide_label: true, placeholder: "(02) 1234 5678" %>
-              <%= f.text_field :state %>
-              <%= f.text_field :email %>
-              <%# <%= f.text_field :category %>
-              <%# <%= f.category_list :category %>
-              <div>
-                <%# <label for="categories">Select category</label> %>
-                <%= f.collection_select :categories, @resource.tag_list_on(:customs), :name, prompt: true%>
-              </div>
-              <%= f.text_area :description %>
-              <%= f.submit t("Submit") , class: "btn btn-outline-dark p-2"%>
+            <%= simple_form_for@resource do |f| %>
+              <%= f.input :name %>
+              <%= f.input :address, placeholder: 'ex: 15 Church street, Richmond VIC 3121'%>
+              <%= f.input :website, placeholder: 'ex: www.helprefugee.com.au'%>
+              <%= f.input :phone, placeholder: 'ex: 03 8398 4171' %>
+              <%= f.input :state, collection: Resource::STATES, prompt: :translate %>
+              <%= f.input :categories, collection: Resource::CATEGORIES, input_html: { multiple: true } %>
+              <%= f.input :description %>
+              <p>Please provide your contact</p>
+              <%= f.input :name %>
+              <%= f.input :email, input_html: { autocomplete: 'email' } %>
+              <%= f.button :submit, class: "btn btn-outline-dark p-2" %>
+              <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
             <% end %>
           </div>
         </div>
