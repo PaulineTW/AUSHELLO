@@ -26,6 +26,10 @@
               <%= f.text_field :email %>
               <%# <%= f.text_field :category %>
               <%# <%= f.category_list :category %>
+              <div>
+                <%# <label for="categories">Select category</label> %>
+                <%= f.collection_select :categories, @resource.tag_list_on(:customs), :name, prompt: true%>
+              </div>
               <%= f.text_area :description %>
               <%= f.submit t("Submit") , class: "btn btn-outline-dark p-2"%>
             <% end %>

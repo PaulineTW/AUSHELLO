@@ -11,9 +11,10 @@ User.destroy_all
 
 
 puts 'Creating 3 users ...'
-user1 = User.create!(email: 'admin@admin.com', password: 'password')
-user2 = User.create!(email: 'julianne@user1.com', password: 'password')
-user3 = User.create!(email: 'pauline@user2.com', password: 'password')
+admin = User.create!(email: 'admin@admin.com', password: 'admin')
+user1 = User.create!(email: 'julianne@user1.com', password: 'password')
+user2 = User.create!(email: 'pauline@user2.com', password: 'password')
+user3 = User.create!(email: 'elliot@user3.com', password: 'password')
 
 puts "Created #{User.count} users ..."
 
