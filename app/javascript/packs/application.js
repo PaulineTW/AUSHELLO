@@ -27,6 +27,7 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
+import "controllers"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

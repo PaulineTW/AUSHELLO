@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  before_action :authenticate_user!, except: [:show, :index, :new, :create]
+  before_action :authenticate_user!, except: [:create]
 end
 
 puts I18n.locale

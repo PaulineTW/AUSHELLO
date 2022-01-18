@@ -1,24 +1,23 @@
-
 <div class="col-11 col-lg-16 mb-5">
 <% @favourites.each do |favourite|%>
-<div class="card-product" >
+<div class="card-product" data-controller="delete-fave-button" data-delete-fave-button-target="items">
 <%=image_tag "contact.png"%>
   <div class="card-product-infos">
     <h2><strong><%= favourite.resource.name %></strong></h2>
     <p><%= t("Address")  %>: <%= favourite.resource.address %></p>
     <p><%= t("Contact")  %>: <%= favourite.resource.phone %></p>
-    <div class="button">
-    <%= link_to t("Website"),"#{favourite.resource.website}", target: '_blank', :class => "btn btn-light text-decoration-none " %>
+    
+ <div class="button">
+     <br><%= link_to t("Website"),"#{favourite.resource.website}", target: "_blank", :class => "btn btn-primary text-decoration-none btn-sm " %>
+    <div class="btn btn-outline-primary text-decoration-none btn-sm"><a href= "<%= "https://www.google.com/maps/dir//" + favourite.resource.address.gsub(" ", "+") %>" target="_blank"><%= t("Directions")%></a>
     </div>
-
-  <% if favourite.resource.favourited_by_user?(current_user) %>
-  <%= link_to icon('fas', 'heart'), favourite_path(I18n.locale, favourite), class: "favorite-icon-dashboard", method: :delete, remote: true %>
-  <% else %>
-  <%= link_to icon('far', 'heart'), resource_favourites_path(I18n.locale, resource), class: "favorite-icon-dashboard", method: :put, remote: true %>
-  <% end %>
+   </div>
+      <% if favourite.resource.favourited_by_user?(current_user) %>
+      <%= link_to icon('fas', 'heart'), favourite_path(I18n.locale, favourite), class: "favorite-icon-dashboard", method: :delete, remote: true, data: {delete_fave_button_target: "button", action: 'click->delete-fave-button#unfave'} %>
+      <% else %>
+      <%= link_to icon('far', 'heart'), resource_favourites_path(I18n.locale, resource), class: "favorite-icon-dashboard", method: :put, remote: true, data: {delete_fave_button_target: "button", action: 'click->delete-fave-button#unfave'} %>
+      <% end %>
   </div>
-
-</div>
+  </div>
   <% end %>
-
 </div>
