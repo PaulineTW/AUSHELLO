@@ -1,7 +1,6 @@
 class FavouritesController < ApplicationController
 
-  before_action :authenticate_user!
-
+  before_action :authenticate_user!, only: %i[create destroy]
 
   def create
     @favourite = Favourite.new
@@ -17,5 +16,6 @@ class FavouritesController < ApplicationController
     @favourite.destroy
     # redirect_back fallback_location: favourite_path, notice: "You have unfavourited #{@favourite.resource.name}"
   end
+
 
 end
