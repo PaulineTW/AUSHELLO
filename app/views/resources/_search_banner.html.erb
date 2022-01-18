@@ -1,17 +1,18 @@
+
+
 <div class="container">
   <div id="seach-banner">
-    <div class= "container flex m-4">
-      <%= form_tag resources_path, method: :get do %>
-        <%= text_field_tag :query,
+    <%# <div class= "container flex m-4"> %>
+      <%# <%= form_tag resources_path, method: :get do %>
+        <%# <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: t("Search By City or Resource") %>
-      <%= submit_tag t("Search Now"), class: "btn btn-primary" %>
-      <% end %>
-    </div>
-
+      <%# <%= submit_tag t("Search Now"), class: "btn btn-primary" %>
+      <%# <% end %>
+    <%# </div> %>
 <div class="categories">
-  <h3>Categories</h3>
+  <%# <h3>Categories</h3> %>
   <%= simple_form_for :search, url: resources_path, method: "GET" do |f| %>
     <%= text_field_tag :query,
       params[:query],
