@@ -1,13 +1,11 @@
-
-
 <div data-controller="update-fave-button">
   <div id="heart" data-update-fave-button-target="items">
     <% favourite = resource.favourited_by_user?(current_user) %>
     <% if favourite %>
-      <%= link_to icon('fas', 'heart'), favourite_path(favourite), method: :delete, remote:true, data: {update_fave_button_target: "button", action: 'click->update-fave-button#unfave'}  %>
+      <%= link_to icon('fas', 'heart'), favourite_path(I18n.locale, favourite), method: :delete, remote:true, data: {update_fave_button_target: "button", action: 'click->update-fave-button#unfave'}  %>
     <% else %>
 
-      <%= link_to icon('far', 'heart'), resource_favourites_path(resource), method: :post, remote:true, data: {update_fave_button_target: "button", action: 'click->update-fave-button#fave'} %>
+      <%= link_to icon('far', 'heart'), resource_favourites_path(I18n.locale, resource), method: :post, remote:true, data: {update_fave_button_target: "button", action: 'click->update-fave-button#fave'} %>
     <% end %>
   </div>
 
@@ -21,7 +19,7 @@
   <p><%= t("Email")  %>: <%= mail_to resource.email %></p>
   <br>
   <%= link_to "#newTag", data: { toggle: "modal" } do %>
-    <i class="fa fa-wrench"></i> Is this information wrong?
+    <i class="fa fa-wrench"></i> <%= t("Is this information wrong?") %>
   <% end %>
 
   <br>
