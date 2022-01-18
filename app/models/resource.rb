@@ -19,8 +19,4 @@ class Resource < ApplicationRecord
                 any_word: true
       }
     }
-
-  # include AlgoliaSearch
-  # algoliasearch do;  end
-
 end
