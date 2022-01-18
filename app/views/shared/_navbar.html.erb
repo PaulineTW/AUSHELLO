@@ -8,21 +8,21 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Add a Resource", "#", class: "nav-link" %>
+          <%= link_to t("Add a Resource"), new_resource_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://www.aquaknect.com.au/wp-content/uploads/2014/03/blank-person.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My dashboard", user_dashboard_index_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to t("My Dashboard"), user_dashboard_index_path(I18n.locale,current_user), class: "dropdown-item" %>
+            <%= link_to t("Log Out"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Add a Resource", new_resource_path, class: "nav-link" %>
+          <%= link_to t("Add a Resource"), new_resource_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to t("Login"), new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>
