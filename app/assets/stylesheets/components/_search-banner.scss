@@ -78,28 +78,32 @@ p.i {
   color:#0957EF;
 }
 
-.square {
-  border-color: #FD1015;
-}
 
 .list-group-item {
   padding:8px;
   // background-color: #FFED00;
   border-radius: 15px;
-
 }
 
 .algolia-places {
   margin-top: 20px;
   margin-bottom: 20px;
-  width: 70%;
+  width: 90%;
+  // margin-right: 8px;
 
 }
 
-// .searchbutton {
-//   // margin-top: 20px;
-// }
+.searchbutton {
+  margin-left:950px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
-  // .searchstuff {
-  //   border:#FD1015;
-  // }
+.orgbutton  {
+  background-color: #FF491E;
+  border-color: #FF491E;
+}
+
+.clear {
+  color:#FF491E;
+}
