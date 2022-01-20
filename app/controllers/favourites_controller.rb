@@ -20,10 +20,4 @@ class FavouritesController < ApplicationController
     # redirect_back fallback_location: favourite_path, notice: "You have unfavourited #{@favourite.resource.name}"
   end
 
-  #   private
-
-  # def resource_params
-  #   params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status,:category_list, :user_id)
-  # end
-
 end

@@ -38,10 +38,10 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     @resource.user = current_user
-    @resource.status = "Pending"
+    # @resource.status = "Pending"
     if @resource.valid?
       @resource.save
-      redirect_to resource_path(@resource)
+      # redirect_to resources_path(@resource)
     else
       render :new
     end

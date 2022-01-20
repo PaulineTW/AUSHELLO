@@ -1,14 +1,11 @@
 require 'csv'
 
-
 puts 'Cleaning resources from the database...'
 Resource.destroy_all
 
 puts 'Cleaning users from the database...'
 
 User.destroy_all
-
-
 
 puts 'Creating 3 users ...'
 admin = User.create!(email: 'admin@admin.com', password: 'admin')
@@ -19,7 +16,6 @@ user3 = User.create!(email: 'elliot@user3.com', password: 'password')
 puts "Created #{User.count} users ..."
 
 puts 'creating resources...'
-
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 csv_text = Rails.root.join('lib', 'seeds', 'AUSHELLO_seeds_real_websitefixed.csv')
