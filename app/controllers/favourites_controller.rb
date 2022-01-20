@@ -17,5 +17,4 @@ class FavouritesController < ApplicationController
     # redirect_back fallback_location: favourite_path, notice: "You have unfavourited #{@favourite.resource.name}"
   end
 
-
 end
