@@ -4,12 +4,13 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
+
 <div id="main">
   <div id="bottom">
     <div id="lists">
-      <div class="sidenav">
+      <div class="sidenav scroll">
         <% @resources.each do |resource| %>
-            <div class= "card m-2 p-2">
+            <div class= "card m-2 p-2 ">
               <div class= "resource_infos">
                   <p class="name"><%= resource.name %></p>
                   <p class="name"><%= resource.categories.pluck(:name).join(',') %></p>

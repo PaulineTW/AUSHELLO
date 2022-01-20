@@ -40,7 +40,7 @@
   top: 300px;
   left: 10px;
   background: #eee;
-  overflow-x: hidden;
+  // overflow: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,4 +50,14 @@
 
 .sidenav a:hover {
   color: #064579;
+}
+
+.scroll {
+  overflow: scroll;
+  width: 310px;
+  height: 310px;
+}
+
+.resource-info {
+  border-color: blue;
 }
