@@ -1,10 +1,23 @@
+<div class="dashboard_banner">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('dashboard_banner.png') %>)">
+    <h1><%= t("My Dashboard") %></h1>
+  </div>
+</div>
 
+ <div class="container">
+  <div class="tab-wrap">
+    <!-- active tab on page load gets checked attribute -->
+    <input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
+    <label for="tab1"><%= t("My Favourites") %></label>
 
+    <%# <input type="radio" id="tab2" name="tabGroup1" class="tab">
+    <label for="tab2"><%= t("My Resources") %></label> %>
 
-<h3><%= @resource.name %></h3>
-  <h6><%= @resource.categories.pluck(:name).join(',') %></h6>
-  <p><%= t("Address")  %>: <br><%= @resource.address %></p>
-  <p><%= t("Contact")  %>: <br><%= @resource.phone %></p>
-  <p><%= t("Description") %>: <br><%= @resource.description %></p>
-  <p><%= t("Email")  %>: <%= mail_to @resource.email %></p>
-  <br>
+    <div class="tab__content">
+       <%= render "myfavourites" %>
+    </div>
+     <%# <div class="tab__content">
+      <%= render "myresources" %>
+  <%# </div> %> %>
+ </div>
+</div>

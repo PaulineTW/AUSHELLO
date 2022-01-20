@@ -1,6 +1,9 @@
 class FavouritesController < ApplicationController
-
   before_action :authenticate_user!, only: %i[create destroy]
+
+  def index
+    @favourites = Favourite.where(user: current_user)
+  end
 
   def create
     @favourite = Favourite.new
@@ -16,5 +19,11 @@ class FavouritesController < ApplicationController
     @favourite.destroy
     # redirect_back fallback_location: favourite_path, notice: "You have unfavourited #{@favourite.resource.name}"
   end
+
+  #   private
+
+  # def resource_params
+  #   params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status,:category_list, :user_id)
+  # end
 
 end

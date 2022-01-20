@@ -6,7 +6,7 @@ class User < ApplicationRecord
   acts_as_favoritor
 
   def admin?
-    seff.name == "admin"
+    self.name == "admin"
   end
 
 end

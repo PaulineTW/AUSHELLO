@@ -31,7 +31,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-
   def new
     @resource = Resource.new
   end
@@ -39,6 +38,7 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     @resource.user = current_user
+    @resource.status = "Pending"
     if @resource.valid?
       @resource.save
       redirect_to resource_path(@resource)
@@ -46,6 +46,8 @@ class ResourcesController < ApplicationController
       render :new
     end
   end
+
+  private
 
   def resource_params
     params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status,:category_list, :user_id)
