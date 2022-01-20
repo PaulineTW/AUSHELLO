@@ -18,7 +18,7 @@
             <%= simple_form_for@resource do |f| %>
               <%= f.input :name %>
               <%= f.input :address, placeholder: 'ex: 15 Church street, Richmond VIC 3121'%>
-              <%= f.input :website, placeholder: 'ex: www.helprefugee.com.au'%>
+              <%= f.input :website, placeholder: 'ex: https://www.helprefugee.com.au'%>
               <%= f.input :phone, placeholder: 'ex: 03 8398 4171' %>
               <%= f.input :state, collection: Resource::STATES, prompt: :translate %>
               <%= f.input :categories, collection: Resource::CATEGORIES, input_html: { multiple: true } %>
