@@ -6,6 +6,8 @@ class Resource < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   acts_as_taggable_on :categories
 
+  CATEGORIES = ["Legal","Housing","Financial help","Visa", "Everyday", "Education", "Employment", "Health", "Community" ]
+  STATES = ["VIC","NSW","QLD","TAS","WA","SA","ACT"]
 
   def favourited_by_user?(user)
     Favourite.find_by(user: user, resource: self)
