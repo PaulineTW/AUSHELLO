@@ -4,11 +4,9 @@ Rails.application.routes.draw do
     root to: 'pages#home'
 
     resources :resources do
-      resources :dashboard, only: [:index, :create]
       resources :favourites, only: [:index, :create]
-
     end
-
+    resources :dashboard, only: [:index, :create]
     resources :favourites, only: [:destroy]
 
     resources :users, only: [:show] do
