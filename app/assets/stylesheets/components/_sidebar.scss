@@ -35,7 +35,7 @@
 
 .sidenav {
   width: 300px;
-  position: fixed;
+  // position: fixed;
   z-index: 1;
   top: 300px;
   left: 10px;
@@ -55,9 +55,22 @@
 .scroll {
   overflow: scroll;
   width: 310px;
-  height: 310px;
+  height: 610px;
 }
 
 .resource-info {
   border-color: blue;
+}
+
+.heading{
+  background: #0957ef;
+  border-color: #ff491e;
+  text-align: center;
+  color: white;
+}
+
+.alignmapandsidenav{
+  display: flex;
+  flex-direction: row-reverse;
+
 }

@@ -12,10 +12,10 @@ class ResourcesController < ApplicationController
       @resources = Resource.where(id: Resource.all.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
     # if we only filter by location, but not categories
     elsif location.present? && categories.nil?
-      @resources = Resource.near(location, 100)
+      @resources = Resource.near(location, 50)
     # if we filter by both categories and location
     elsif categories.present? && location != ""
-      resources_location = Resource.near(location, 100)
+      resources_location = Resource.near(location, 50)
       @resources = resources_location.where(id: resources_location.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
     else
       # no filters applied
@@ -46,6 +46,18 @@ class ResourcesController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @resource = Resource.find(params[:resource_id])
+    #  @markers = @resource.geocoded.map do |resource|
+    #   {
+    #     lat: resource.latitude,
+    #     lng: resource.longitude,
+    #     info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+    #   }
+    # end
+  end
+
 
   def resource_params
     params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status,:category_list, :user_id)
