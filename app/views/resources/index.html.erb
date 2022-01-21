@@ -11,7 +11,7 @@
 <div id="main">
   <div id="bottom">
     <div id="lists">
-      <div class="sidenav scroll ">
+      <div class="sidenav scroll">
         <div class="heading">
           <thead>
             <th>Resources</th>
@@ -21,16 +21,8 @@
         <% @resources.each do |resource| %>
             <div class= "card m-2 p-2 ">
               <div class= "resource_infos">
-                  <%# <p class="name"> %>
-                  <%#= resource.name %>
-                  <%# </p> %>
-                  <p><%= link_to resource.name, :anchor => 'map', class: "nav-link" %></p>
-                  <%# <p class="name"> %>
-                  <%#= resource.categories.pluck(:name).join(',') %>
-                  <%# </p> %>
-                  <%# <p class="name"> %>
-                  <%#= resource.description %>
-                  <%# </p> %>
+                  <p><%= link_to resource.name, :placeid => resource.id, class: "nav-link" %></p>
+                  <%= link_to t("Website"),"#{resource.website}", target: "_blank", :class => "yellowbutton btn-sm text-decoration-none" %>
               </div>
             </div>
           <% end %>

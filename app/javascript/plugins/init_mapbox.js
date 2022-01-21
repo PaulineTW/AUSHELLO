@@ -35,6 +35,12 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    // setTimeout('', 2000);
+    // map.flyTo({
+    //   center: [151.2,-33.9],
+    //   zoom: 9,
+    //   essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    // });
   }
   // const geocoder = document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 };
