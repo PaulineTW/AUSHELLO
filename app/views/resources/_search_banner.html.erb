@@ -1,12 +1,12 @@
-<div class= "container">    
+<div class= "container">
   <div class="categories">
     <div class= "searchstuff">
       <%= simple_form_for :search, url: resources_path, method: "GET" do |f| %>
-        <%= 
+        <%=
             text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: t("Search By City or Resource") 
+            placeholder: t("Search By City or Resource")
             %>
     </div>
     <div class="d-flex justify-content-between align-items-center">
