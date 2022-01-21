@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index]
+  skip_before_action :authenticate_user!, only: %i[index new create]
   before_action :set_locale
 
   def index
@@ -34,33 +34,23 @@ class ResourcesController < ApplicationController
     end
   end
 
-
   def new
     @resource = Resource.new
   end
 
   def create
     @resource = Resource.new(resource_params)
-    @resource.user = current_user
+    # @resource.user = current_user
+    # @resource.status = "Pending"
     if @resource.valid?
       @resource.save
-      redirect_to resource_path(@resource)
+      redirect_to resources_path(@resource)
     else
       render :new
     end
   end
 
-  def show
-    @resource = Resource.find(params[:resource_id])
-    #  @markers = @resource.geocoded.map do |resource|
-    #   {
-    #     lat: resource.latitude,
-    #     lng: resource.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
-    #   }
-    # end
-  end
-
+  private
 
   def resource_params
     params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status,:category_list, :user_id)

@@ -1,6 +1,9 @@
 class FavouritesController < ApplicationController
-
   before_action :authenticate_user!, only: %i[create destroy]
+
+  def index
+    @favourites = Favourite.where(user: current_user)
+  end
 
   def create
     @favourite = Favourite.new

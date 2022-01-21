@@ -1,25 +1,36 @@
-
-
 <div class="dashboard_banner">
   <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('dashboard_banner.png') %>)">
-    <h1><%= t("My Dashboard") %></h1>
-  </div>
-</div>
-
- <div class="container">
-  <div class="tab-wrap">
-    <!-- active tab on page load gets checked attribute -->
-    <input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
-    <label for="tab1"><%= t("My Favourites") %></label>
-
-    <input type="radio" id="tab2" name="tabGroup1" class="tab">
-    <label for="tab2"><%= t("My Resources") %></label>
-
-    <div class="tab__content">
-       <%= render "myfavourites" %>
-    </div>
-     <div class="tab__content">
-      <%= render "myresources" %>
+    <h1><%= t("Admin Dashboard") %></h1>
   </div>
  </div>
+</div>
+
+
+<div class="container">
+  <div class= "notification card m-4 p-3">
+    <h1>New resources submited</h1>
+    <% @resources.each do |resource| %>
+      <div class= "notification-content p-3">
+        <%# <a href=""><%= image_tag "basil.jpg", class: "avatar-large" %></a> %>
+        <p><strong><%= resource.name %></strong>
+        <br><%= resource.address %>
+        <br><%= resource.website%>
+        <br><%= resource.phone%>
+        <br><%= resource.state %>
+        <br><%= resource.state %>
+        <br>Status of resource is <b><%= resource.status%> </b>.
+        <% if resource.status == "Pending" %> <br> This resource need to be reviewed
+        <% elsif resource.status == "Approved" %> <br> This resource need to be reviewed
+        <% end  %>
+        </p>
+
+      <div class="notification-actions">
+        <%# <a href=""><%= link_to 'Edit my resource', edit_resource_path(resource)%><i class="fas fa-pencil-alt"></i> </a> %>
+        <%# <a href=""><%= link_to 'Cancel', resource_path(resource),
+            method: :delete,
+            data: { confirm: "Are you sure you want to cancel?" } %> <i class="far fa-trash-alt"></i> </a> %>
+      </div>
+    </div>
+  <% end %>
+  </div>
 </div>

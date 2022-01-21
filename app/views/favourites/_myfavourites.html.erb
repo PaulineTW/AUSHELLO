@@ -6,7 +6,7 @@
     <h2><strong><%= favourite.resource.name %></strong></h2>
     <p><%= t("Address")  %>: <%= favourite.resource.address %></p>
     <p><%= t("Contact")  %>: <%= favourite.resource.phone %></p>
-    
+
  <div class="button">
      <br><%= link_to t("Website"),"#{favourite.resource.website}", target: "_blank", :class => "btn btn-primary text-decoration-none btn-sm " %>
     <div class="btn btn-outline-primary text-decoration-none btn-sm"><a href= "<%= "https://www.google.com/maps/dir//" + favourite.resource.address.gsub(" ", "+") %>" target="_blank"><%= t("Directions")%></a>

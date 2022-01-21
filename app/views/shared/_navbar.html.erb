@@ -19,7 +19,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://i.ibb.co/Df06tjS/AUSHELLOAVATAR.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to t("Dashboard"), user_dashboard_index_path(I18n.locale,current_user), class: "dropdown-item" %>
+            <%= link_to t("My favourites"), resource_favourites_path(I18n.locale,current_user), class: "dropdown-item" %>
             <%= link_to t("Log Out"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
