@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index]
+  skip_before_action :authenticate_user!, only: %i[index new create]
   before_action :set_locale
 
   def index
@@ -37,11 +37,11 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.new(resource_params)
-    @resource.user = current_user
+    # @resource.user = current_user
     # @resource.status = "Pending"
     if @resource.valid?
       @resource.save
-      # redirect_to resources_path(@resource)
+      redirect_to resources_path(@resource)
     else
       render :new
     end

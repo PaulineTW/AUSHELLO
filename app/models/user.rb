@@ -7,8 +7,4 @@ class User < ApplicationRecord
   has_many :favourites, through: :favourites, source: :resources
   acts_as_favoritor
 
-  def admin?
-    self.name == "admin"
-  end
-
 end
