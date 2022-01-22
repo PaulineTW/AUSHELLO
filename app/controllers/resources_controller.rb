@@ -30,6 +30,7 @@ class ResourcesController < ApplicationController
         lat: resource.latitude,
         lng: resource.longitude,
         info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+        image_url: helpers.asset_url("ahmarker.png")
       }
     end
   end
