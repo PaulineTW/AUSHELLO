@@ -41,6 +41,7 @@ gem "bootstrap_form", "~> 5.0"
 gem 'acts_as_favoritor'
 gem 'turbolinks_render'
 # gem 'bullet', group: 'development'
+gem 'redis-rails'
 
 
 group :development, :test do

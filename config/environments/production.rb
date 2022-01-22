@@ -90,6 +90,12 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  if ENV['REDISCLOUD_URL']
+    config.cache_store = :redis_store, ENV['REDISCLOUD_URL'], { expires_in: 1.day }
+    config.action_controller.enable_fragment_cache_logging = true # you can remove this line once you made sure caching works on Heroku
+  end
+
+
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
