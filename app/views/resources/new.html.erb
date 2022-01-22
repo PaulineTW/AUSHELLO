@@ -33,7 +33,7 @@
               <%= f.input :website, placeholder: 'https://www.helprefugee.com.au'%>
               <%= f.input :phone, placeholder: '03 8398 4171' %>
               <%= f.input :state, collection: Resource::STATES, prompt: :translate %>
-              <%= f.input :categories, collection: Resource::CATEGORIES, input_html: { multiple: true }%>
+              <%= f.input :category_list, collection: Resource::CATEGORIES, input_html: { multiple: true }%>
               <%= f.input :description %>
               <%= f.button :submit, "Submit", class: "btn btn-outline-dark p-2" %>
               <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
