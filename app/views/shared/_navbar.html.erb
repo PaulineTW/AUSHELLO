@@ -3,6 +3,15 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+
+ <ul class="nav-item">
+    <%= link_to t("English"), resources_path(locale: :en) %>
+    <%= link_to t("Español"), resources_path(locale: :es) %>
+    <%= link_to t("عربى"), resources_path(locale: :ar) %>
+  </ul>
+
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
