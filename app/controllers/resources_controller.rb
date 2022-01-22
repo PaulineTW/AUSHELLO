@@ -3,6 +3,7 @@ class ResourcesController < ApplicationController
   before_action :set_locale
 
   def index
+    @message = Message.new
     @tags = ActsAsTaggableOn::Tag.all
     categories = params[:keywords]
     location = params[:query]

@@ -19,9 +19,7 @@
   <p><%= t("Description") %>: <br><%= resource.description %></p>
   <p><%= t("Email")  %>: <%= mail_to resource.email %></p>
   <br>
-  <%= link_to "#newTag", data: { toggle: "modal" } do %>
-    <i class="fa fa-wrench"></i> <%= t("Is this information wrong?") %>
-  <% end %>
+  <%= link_to t("Is this information wrong?"), new_resource_message_path(resource) %>
 
   <br>
   <br>

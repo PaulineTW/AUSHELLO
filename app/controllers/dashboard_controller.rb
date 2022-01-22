@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
 
   def index
     @resources = Resource.where(user: current_user)
+    @messages = Message.where(solved: false)
   end
 
 
