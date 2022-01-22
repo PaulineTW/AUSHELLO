@@ -5,22 +5,22 @@
  </div>
 </div>
 
-
 <div class="container">
   <div class= "notification card m-4 p-3">
     <h1>New resources submited</h1>
     <% @resources.each do |resource| %>
       <div class= "notification-content p-3">
-        <%# <a href=""><%= image_tag "basil.jpg", class: "avatar-large" %></a> %>
         <p><strong><%= resource.name %></strong>
         <br><%= resource.address %>
         <br><%= resource.website%>
         <br><%= resource.phone%>
-        <br><%= resource.state %>
-        <br><%= resource.state %>
-        <br>Status of resource is <b><%= resource.status%> </b>.
+        <br><%= resource.email%>
+        <br><%= resource.categories.pluck(:name).join(', ') %>
+        <br>
+        <br>Status of resource is <b><%= resource.status%></b>
+        <br>
         <% if resource.status == "Pending" %> <br> This resource need to be reviewed
-        <% elsif resource.status == "Approved" %> <br> This resource need to be reviewed
+        <% elsif resource.status == "Approved" %> <br> This resource have been to be reviewed
         <% end  %>
         </p>
 

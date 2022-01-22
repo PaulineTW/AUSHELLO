@@ -10,13 +10,13 @@
  <div class= "background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('refugee.jpg') %>)">
     <div class="centered">
       <div class="card">
-        <div class="container">
+        <div class="container p-3">
           <div class="card-title">
             <h2>Register Your Organisation</h2>
           </div>
           <div class="card-body">
-            <%# <p>Please provide your contact</p>
-            <form>
+            <%# <p>Please provide your contact</p> %>
+            <%# <form>
               <div class="form-group">
                 <label for="Name">Your name</label>
                 <input type="name" class="form-control" id="Name" placeholder="Your name">
@@ -27,15 +27,16 @@
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
             </form> %>
-            <%= simple_form_for@resource do |f| %>
+            <%= simple_form_for @resource do |f| %>
               <%= f.input :name %>
-              <%= f.input :address, placeholder: 'ex: 15 Church street, Richmond VIC 3121'%>
-              <%= f.input :website, placeholder: 'ex: https://www.helprefugee.com.au'%>
-              <%= f.input :phone, placeholder: 'ex: 03 8398 4171' %>
+              <%= f.input :address, placeholder: '15 Church street, Richmond VIC 3121'%>
+              <%= f.input :website, placeholder: 'https://www.helprefugee.com.au'%>
+              <%= f.input :phone, placeholder: '03 8398 4171' %>
+              <%= f.input :email, placeholder: 'info@refugee.com' %>
               <%= f.input :state, collection: Resource::STATES, prompt: :translate %>
-              <%# <%= f.input :categories, collection: Resource::CATEGORIES, input_html: { multiple: true } %> %>
+              <%= f.input :category_list, collection: Resource::CATEGORIES, input_html: { multiple: true }%>
               <%= f.input :description %>
-              <%= f.button :button, "Submit", type: "submit", class: "btn btn-outline-dark p-2" %>
+              <%= f.button :submit, "Submit", class: "btn btn-outline-dark p-2" %>
               <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
             <% end %>
           </div>

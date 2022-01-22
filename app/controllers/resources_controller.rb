@@ -40,11 +40,12 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.new(resource_params)
-    # @resource.user = current_user
-    # @resource.status = "Pending"
+    @resource.user = current_user
+    @resource.category_list = params["resource"]["category_list"]
+    @resource.status = "Pending"
     if @resource.valid?
       @resource.save
-      redirect_to resources_path(@resource)
+      redirect_to resources_path
     else
       render :new
     end

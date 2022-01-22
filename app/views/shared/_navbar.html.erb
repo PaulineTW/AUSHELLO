@@ -7,8 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-
-      <% if params[:controller] == 'dashboard' %>
+        <% if params[:controller] == 'favourites' %>
             <li class="nav-item">
             <%= link_to t("Resources"), resources_path, class: "nav-link" %>
           </li>
