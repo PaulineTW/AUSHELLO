@@ -1,3 +1,5 @@
+
+
 <div data-controller="update-fave-button">
   <div id="heart" data-update-fave-button-target="items">
     <% favourite = @resource.favouritors.include?(current_user) if @resource.present? %>
@@ -10,7 +12,7 @@
     <% end %>
   </div>
 
-
+<% cache resource do %>
   <div  data-update-fave-button-target="resources">
   <h3><%= resource.name %></h3>
   <%#= resource.categories.map(:name).join(',') %>
@@ -30,4 +32,8 @@
   <a href="<%= "https://www.google.com/maps/dir//" + resource.address.gsub(" ", "+") %>" target="_blank"><%= t("Directions")  %></a>
 
 </div>
+
+<% end %>
+
+
 </div>

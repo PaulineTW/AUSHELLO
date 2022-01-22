@@ -7,7 +7,6 @@ class ResourcesController < ApplicationController
     categories = params[:keywords]
     location = params[:query]
     place = params[:placeid]
-    @favourite_resources = current_user.favourite_resources
     # if we only filter by categories and have no location
     if place.present?
       @resources = Resource.with_favourites.where(id: place)
@@ -29,16 +28,15 @@ class ResourcesController < ApplicationController
       {
         lat: resource.latitude,
         lng: resource.longitude,
-        id: resource.id
-        # info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+        info_window: render_to_string(partial: "info_window", locals: { resource: resource })
       }
     end
   end
 
-  def marker_info
-    @resource = Resource.find_by(latitude: params[:latitude], longitude: params[:longitude])
-    render json: @resource
-  end
+  # def marker_info
+  #   @resource = Resource.find_by(latitude: params[:latitude], longitude: params[:longitude])
+  #   render json: @resource
+  # end
 
   def new
     @resource = Resource.new
