@@ -7,31 +7,37 @@ class ResourcesController < ApplicationController
     categories = params[:keywords]
     location = params[:query]
     place = params[:placeid]
-
+    @favourite_resources = current_user.favourite_resources
     # if we only filter by categories and have no location
     if place.present?
-      @resources = Resource.where(id: place)
+      @resources = Resource.with_favourites.where(id: place)
     elsif categories.present? && location == ""
-      @resources = Resource.where(id: Resource.all.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
+      @resources = Resource.with_favourites.where(id: Resource.all.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
     # if we only filter by location, but not categories
     elsif location.present? && categories.nil?
-      @resources = Resource.near(location, 20)
+      @resources = Resource.with_favourites.near(location, 20)
     # if we filter by both categories and location
     elsif categories.present? && location != ""
-      resources_location = Resource.near(location, 20)
+      resources_location = Resource.with_favourites.near(location, 20)
       @resources = resources_location.where(id: resources_location.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
     else
       # no filters applied
-      @resources = Resource.all
+      @resources = Resource.with_favourites
     end
 
     @markers = @resources.geocoded.map do |resource|
       {
         lat: resource.latitude,
         lng: resource.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
+        id: resource.id
+        # info_window: render_to_string(partial: "info_window", locals: { resource: resource }),
       }
     end
+  end
+
+  def marker_info
+    @resource = Resource.find_by(latitude: params[:latitude], longitude: params[:longitude])
+    render json: @resource
   end
 
   def new

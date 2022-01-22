@@ -1,6 +1,6 @@
 <div data-controller="update-fave-button">
   <div id="heart" data-update-fave-button-target="items">
-    <% favourite = resource.favourited_by_user?(current_user) %>
+    <% favourite = @resource.favouritors.include?(current_user) if @resource.present? %>
     <% if favourite %>
       <%= link_to icon('fas', 'heart'), favourite_path(I18n.locale, favourite), method: :delete, remote:true, data: {update_fave_button_target: "button", action: 'click->update-fave-button#unfave'}  %>
 
@@ -13,7 +13,7 @@
 
   <div  data-update-fave-button-target="resources">
   <h3><%= resource.name %></h3>
-  <h6><%= resource.categories.pluck(:name).join(',') %></h6>
+  <%#= resource.categories.map(:name).join(',') %>
   <p><%= t("Address")  %>: <br><%= resource.address %></p>
   <p><%= t("Contact")  %>: <br><%= resource.phone %></p>
   <p><%= t("Description") %>: <br><%= resource.description %></p>

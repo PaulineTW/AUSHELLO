@@ -15,7 +15,7 @@
         <div class="heading">
           <thead>
             <th>Resources</th>
-            <tr> <%= "(#{@resources.length})"%></tr>
+            <tr> <%= "(#{@resources.size})"%></tr>
           </thead>
         </div>
         <% @resources.each do |resource| %>
@@ -34,3 +34,18 @@
 
 
 </div>
+
+<script>
+  window.addEventListener('load', (event) => {
+  console.log('page is fully loaded');
+  let markers = document.querySelectorAll(".mapboxgl-marker")
+  console.log(markers)
+  markers.forEach((marker) => marker.addEventListener('click',(e) => {
+    console.log(e.currentTarget)
+    console.log(marker)
+  }))
+
+});
+
+
+</script>

@@ -40,6 +40,7 @@ gem 'devise-i18n'
 gem "bootstrap_form", "~> 5.0"
 gem 'acts_as_favoritor'
 gem 'turbolinks_render'
+# gem 'bullet', group: 'development'
 
 
 group :development, :test do
