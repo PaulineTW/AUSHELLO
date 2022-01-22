@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
 
     resources :resources do
+      resources :messages, only: [:create]
       resources :favourites, only: [:index, :create]
     end
     resources :dashboard, only: [:index, :create]
