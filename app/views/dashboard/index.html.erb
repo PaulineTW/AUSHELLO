@@ -12,6 +12,7 @@
       <div class= "notification-content p-3">
         <p><strong><%= resource.name %></strong>
         <br><%= resource.address %>
+        <br><%= resource.state %>
         <br><%= resource.website%>
         <br><%= resource.phone%>
         <br><%= resource.email%>
@@ -24,12 +25,9 @@
         <% end  %>
         </p>
 
-      <div class="notification-actions">
-        <%# <a href=""><%= link_to 'Edit my resource', edit_resource_path(resource)%><i class="fas fa-pencil-alt"></i> </a> %>
-        <%# <a href=""><%= link_to 'Cancel', resource_path(resource),
-            method: :delete,
-            data: { confirm: "Are you sure you want to cancel?" } %> <i class="far fa-trash-alt"></i> </a> %>
-      </div>
+      <%# <div class="notification-actions">
+        <a href=""><%= link_to 'confirmed', dashboard_confirmed_path(resource), :method => 'patch'%><i class="far fa-thumbs-up"></i></a>
+      <%# </div> %> %>
     </div>
   <% end %>
   </div>

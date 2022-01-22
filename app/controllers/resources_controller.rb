@@ -40,7 +40,7 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.new(resource_params)
-    @resource.user = current_user
+    @resource.user_id = current_user.id
     @resource.category_list = params["resource"]["category_list"]
     @resource.status = "Pending"
     if @resource.valid?
@@ -51,9 +51,17 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def confirmed
+    @resource = Resource.find(params[:id])
+    @resource.status = "confirmed"
+    @resource.save
+    redirect_to dashboard_index_path
+  end
+
   private
 
   def resource_params
     params.require(:resource).permit(:name, :description, :address, :website, :phone, :state, :email, :status,:category_list, :user_id)
   end
+
 end
