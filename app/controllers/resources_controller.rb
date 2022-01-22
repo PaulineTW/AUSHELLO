@@ -10,19 +10,19 @@ class ResourcesController < ApplicationController
 
     # if we only filter by categories and have no location
     if place.present?
-      @resources = Resource.where(id: place)
+      @resources = Resource.confirmed.where(id: place)
     elsif categories.present? && location == ""
-      @resources = Resource.where(id: Resource.all.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
+      @resources = Resource.confirmed.where(id: Resource.all.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
     # if we only filter by location, but not categories
     elsif location.present? && categories.nil?
-      @resources = Resource.near(location, 20)
+      @resources = Resource.confirmed.near(location, 20)
     # if we filter by both categories and location
     elsif categories.present? && location != ""
-      resources_location = Resource.near(location, 20)
-      @resources = resources_location.where(id: resources_location.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
+      resources_location = Resource.confirmed.near(location, 20)
+      @resources = resources_location.confirmed.where(id: resources_location.tagged_with(categories, any: true).reject(&:blank?).map(&:id))
     else
       # no filters applied
-      @resources = Resource.all
+      @resources = Resource.confirmed
     end
 
     @markers = @resources.geocoded.map do |resource|
