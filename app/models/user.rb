@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :resources
   has_many :favourites, through: :favourites, source: :resources
-  acts_as_favoritor
+  # acts_as_favoritor
 
 end
