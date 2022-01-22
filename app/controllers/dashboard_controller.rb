@@ -1,6 +1,5 @@
 class DashboardController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
-
 # before_action :admin_user,     only: [:index]
 
 # def admin_user

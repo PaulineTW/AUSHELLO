@@ -5,7 +5,6 @@
  </div>
 </div>
 
-
 <div class="container">
   <div class= "notification card m-4 p-3">
     <h1>New resources submited</h1>
@@ -17,7 +16,7 @@
         <br><%= resource.website%>
         <br><%= resource.phone%>
         <br><%= resource.state %>
-        <br><%= resource.state %>
+        <br><%= resource.categories.pluck(:name).join(',') %>
         <br>Status of resource is <b><%= resource.status%> </b>.
         <% if resource.status == "Pending" %> <br> This resource need to be reviewed
         <% elsif resource.status == "Approved" %> <br> This resource need to be reviewed
