@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :resources do
+      resources :messages, only: [:new, :create]
+  end
   scope "(:locale)", locale: /en|ar|es/ do
     devise_for :users
     root to: 'pages#home'
 
     resources :resources do
-      resources :messages, only: [:create]
       resources :favourites, only: [:index, :create]
     end
     resources :dashboard, only: [:index, :create]
