@@ -13,11 +13,29 @@
     <% @tags.each do |tag|  %>
       <div class ="square">
           <% if tag.name == "Housing" %>
-            <div class="list-group-item rounded m-2">
+
+          <%# # test %>
+          <input type="checkbox" id="checkbox1">
+          <label for="checkbox1"><%= check_box_tag "keywords[]", tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, :style => "display: none;" %>
+          <i class="fas fa-home fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Housing") %></p>
+          </label>
+
+
+        <%# <div class="list-group-item rounded"> %>
+          <%# <input type="checkbox" id="checkbox1" hidden>
+          <label for="checkbox1">
+                <%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %>
+                <%# <i class="fas fa-home fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Housing") %></p>
+          <%# </label> %>
+        <%# </div> %>
+
+
+
+            <%# <div class="list-group-item rounded m-2">
                 <p class="mb-0">
                 <%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %>
-                <i class="fas fa-home fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Housing") %></p>
-            </div>
+                <%# <i class="fas fa-home fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Housing") %></p>
+            <%# </div> %>
           <% elsif tag.name == "Financial help" %>
             <div class="list-group-item rounded m-2">
               <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-hand-holding-usd fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Financial help")%></p>
