@@ -11,3 +11,27 @@
 .navbar-lewagon .navbar-brand img {
   width: 160px;
 }
+
+.languagelink a {
+  margin-left: 10px;
+  color: black;
+  text-decoration: none;
+
+}
+
+.languagelink a:hover {
+  color: #ff491e;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-item a {
+  color: black;
+}
+
+.nav-item .languagelink {
+  position: absolute;
+  left:180px;
+}
