@@ -55,7 +55,7 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
     @resource.status = "confirmed"
     @resource.save
-    redirect_to dashboard_index_path
+    redirect_to dashboard_path
   end
 
   private

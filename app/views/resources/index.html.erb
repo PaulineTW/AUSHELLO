@@ -1,36 +1,29 @@
-
-
 <div class="alignmapandsidenav">
-
   <div id="map"
     style="width: 100%; height: 600px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
-<div id="main">
-  <div id="bottom">
-    <div id="lists">
-      <div class="sidenav scroll">
-        <div class="heading">
-          <thead>
-            <th>Resources</th>
-            <tr> <%= "(#{@resources.length})"%></tr>
-          </thead>
-        </div>
-        <% @resources.each do |resource| %>
-            <div class= "card m-2 p-2 ">
-              <div class= "resource_infos">
-                  <p><%= link_to resource.name, :placeid => resource.id, class: "nav-link" %></p>
-                  <%= link_to t("Website"),"#{resource.website}", target: "_blank", :class => "yellowbutton btn-sm text-decoration-none" %>
+  </div>
+  <div id="main">
+    <div id="bottom">
+      <div id="lists">
+        <div class="sidenav scroll">
+          <div class="heading">
+            <thead>
+              <th>Resources</th>
+              <tr> <%= "(#{@resources.length})"%></tr>
+            </thead>
+          </div>
+          <% @resources.each do |resource| %>
+              <div class= "card m-2 p-2 ">
+                <div class= "resource_infos">
+                    <p><%= link_to resource.name, :placeid => resource.id, class: "nav-link" %></p>
+                    <%= link_to t("Website"),"#{resource.website}", target: "_blank", :class => "yellowbutton btn-sm text-decoration-none" %>
+                </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
 </div>

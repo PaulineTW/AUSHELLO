@@ -7,14 +7,6 @@ class DashboardController < ApplicationController
     @resources = Resource.where(user: current_user)
   end
 
-  # def confirmed
-  #   @resource = Resource.find(params[:id])
-  #   raise
-  #   @resource.status = "confirmed"
-  #   @resource.save
-  #   redirect_to dashboard_index_path
-  # end
-
 
   # private
 

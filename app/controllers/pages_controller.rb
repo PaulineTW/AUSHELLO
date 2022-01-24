@@ -4,5 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def dashboard
+    @resources = Resource.where(user: current_user)
+    # @messages = Message.where(solved: false)
+  end
 
 end

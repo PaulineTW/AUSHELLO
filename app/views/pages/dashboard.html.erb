@@ -1,0 +1,34 @@
+<div class="dashboard_banner">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('dashboard_banner.png') %>)">
+    <h1><%= t("Admin Dashboard") %></h1>
+  </div>
+ </div>
+</div>
+
+<div class="container">
+  <div class= "notification card m-4 p-3">
+    <h1>New resources submited</h1>
+    <% @resources.each do |resource| %>
+      <div class= "notification-content p-3">
+        <p><strong><%= resource.name %></strong>
+        <br><%= resource.address %>
+        <br><%= resource.state %>
+        <br><%= resource.website%>
+        <br><%= resource.phone%>
+        <br><%= resource.email%>
+        <br><%= resource.categories.pluck(:name).join(', ') %>
+        <br>
+        <br>Status of resource is <b><%= resource.status%></b>
+        <br>
+        <% if resource.status == "Pending" %> <br> This resource need to be reviewed
+        <% elsif resource.status == "confirmed" %> <br> This resource have been to be reviewed
+        <% end  %>
+        </p>
+
+      <%# <div class="notification-actions">
+        <a href=""><%= link_to 'confirmed', dashboard_confirmed_path(resource), :method => 'patch'%><i class="far fa-thumbs-up"></i></a>
+      <%# </div> %> %>
+    </div>
+  <% end %>
+  </div>
+</div>
