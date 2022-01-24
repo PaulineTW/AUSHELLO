@@ -51,7 +51,7 @@ class ResourcesController < ApplicationController
     end
   end
 
-  def confirmed
+  def approve
     @resource = Resource.find(params[:id])
     @resource.status = "confirmed"
     @resource.save

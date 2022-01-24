@@ -3,14 +3,13 @@ Rails.application.routes.draw do
     devise_for :users
     root to: 'pages#home'
     get '/dashboard', to: 'pages#dashboard', as: :dashboard
+    patch 'resources/:id/approve', to: 'resources#approve', as: 'resource_approve'
 
     resources :resources do
       resources :favourites, only: [:index, :create]
     end
     # resources :dashboard, only: [:index, :confirmed]
-    resources :resources, only: [:confirmed]
-
-    patch "resources/:id/confirmed", to: "dashboard#confirmed", as: 'dashboard_confirmed'
+    resources :resources, only: [:approve]
     resources :favourites, only: [:destroy]
     resources :users, only: [:show] do
     end

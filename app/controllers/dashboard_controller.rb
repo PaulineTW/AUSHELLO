@@ -7,7 +7,6 @@ class DashboardController < ApplicationController
     @resources = Resource.where(user: current_user)
   end
 
-
   # private
 
   # def resource_params
