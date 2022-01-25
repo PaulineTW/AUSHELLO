@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     resources :users, only: [:show] do
     end
   end
+   patch "/resources/:id/approve", to: "resources#approve", as: 'resources_approve'
+   patch "/resources/:id/decline", to: "resources#decline", as: 'resources_decline'
 end

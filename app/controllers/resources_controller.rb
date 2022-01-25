@@ -53,6 +53,22 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def approve
+    @resource = Resource.find(params[:id])
+    @resource.status = "confirmed"
+    @resource.save
+    redirect_to dashboard_index_path
+  end
+
+  def decline
+    @resource = Resource.find(params[:id])
+    @resource.status = "confirmed"
+    @resource.save
+    redirect_to dashboard_index_path
+  end
+
+
+
   private
 
   def resource_params
