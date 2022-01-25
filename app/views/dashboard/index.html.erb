@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class= "notification card m-4 p-3">
-    <h1>New resources submited</h1>
+    <h1>New resources submitted</h1>
     <% @resources.each do |resource| %>
       <div class= "notification-content p-3">
         <p><strong><%= resource.name %></strong>
@@ -20,18 +20,15 @@
         <br>
         <br>Status of resource is <b><%= resource.status%></b>
         <br>
-        <% if resource.status == "Pending" %> <br> This resource need to be reviewed
-        <% elsif resource.status == "confirmed" %> <br> This resource have been to be reviewed
+        <% if resource.status == "Pending" %> <br> This resource still needs to be reviewed.
+        <% elsif resource.status == "confirmed" %> <br> This resource has been reviewed and approved
         <% end  %>
         </p>
 
       <div class="notification-actions">
         <% if resource.status == "Pending" %>
-        <%# <%= link_to 'Approve', resource_approve_path(booking), :method => 'patch', class: "btn btn-secondary m-5"%>
-        <%# <%= link_to 'Decline ', booking_decline_path(booking), :method => 'patch', class: "btn btn-secondary m-5"%>
-        <%= link_to 'Approve', class: "btn btn-secondary m-5" %>
-        <%= link_to 'Update', class: "btn btn-secondary m-5" %>
-        <%= link_to 'Decline', class: "btn btn-secondary m-5" %>
+        <%= link_to 'Approve', resources_approve_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
+        <%= link_to 'Decline', resources_decline_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
         <% end  %>
       </div>
 
