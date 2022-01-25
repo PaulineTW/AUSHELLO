@@ -13,7 +13,7 @@
     <style>
         /* width */
         ::-webkit-scrollbar {
-          width: 20px;
+          width: 10px;
         }
 
         /* Track */
@@ -36,7 +36,7 @@
   </head>
 
   <body>
-    <% unless action_name == "home" %>
+    <% unless action_name == "home" || action_name == "new" %>
       <%= render 'shared/navbar' %>
     <% end %>
       <%= render 'resources/search_banner' if current_page?(resources_path) %>

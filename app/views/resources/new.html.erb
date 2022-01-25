@@ -1,32 +1,18 @@
-<div class="split left">
+<div class="split left background">
   <div class="centered ">
     <%= image_tag "aushello_logo.png", class:"logo" %>
     <h3>Help us provide more services</h3>
-    <%= link_to "Back Home", resources_path, class: "btn btn-outline-dark m-5" %>
+    <%= link_to "Back Home", resources_path, class: "orgbutton btn btn-secondary m-5" %>
   </div>
 </div>
 
 <div class="split right">
- <div class= "background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('refugee.jpg') %>)">
+ <div class= "background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('aushellodashboard1.png') %>)">
     <div class="centered">
       <div class="card">
-        <div class="container p-3">
-          <div class="card-title">
-            <h2>Register Your Organisation</h2>
-          </div>
+        <div class="container p-2">
           <div class="card-body">
-            <%# <p>Please provide your contact</p> %>
-            <%# <form>
-              <div class="form-group">
-                <label for="Name">Your name</label>
-                <input type="name" class="form-control" id="Name" placeholder="Your name">
-              </div>
-              <div class="form-group">
-                <label for="Email">Your Email address</label>
-                <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-            </form> %>
+          <h3>Register Your Organisation</h3>
             <%= simple_form_for @resource do |f| %>
               <%= f.input :name %>
               <%= f.input :address, placeholder: '15 Church street, Richmond VIC 3121'%>
@@ -35,9 +21,9 @@
               <%= f.input :email, placeholder: 'info@refugee.com' %>
               <%= f.input :state, collection: Resource::STATES, prompt: :translate %>
               <%= f.input :category_list, collection: Resource::CATEGORIES, input_html: { multiple: true }%>
-              <%= f.input :description %>
-              <%= f.button :submit, "Submit", class: "btn btn-outline-dark p-2" %>
-              <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+              <%# <%= f.input :description %>
+              <%= f.button :submit, "Submit", class: "orgbutton btn btn-secondary mr-2" %>
+              <%= f.button :button, "Cancel", type: "reset", class: "text-decoration-none clear" %>
             <% end %>
           </div>
         </div>
