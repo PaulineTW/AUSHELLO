@@ -15,7 +15,7 @@ puts "Created #{User.count} users ..."
 
 puts 'creating resources...'
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-csv_text = Rails.root.join('lib', 'seeds', 'AUSHELLO_seeds_real_websitefixed.csv')
+csv_text = Rails.root.join('lib', 'seeds', 'AUSHELLO_seeds_actual.csv')
 puts csv_text
 CSV.foreach(csv_text, csv_options) do |row|
   t = Resource.new
