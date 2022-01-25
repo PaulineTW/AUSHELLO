@@ -21,7 +21,6 @@
               <%= f.input :email, placeholder: 'info@refugee.com' %>
               <%= f.input :state, collection: Resource::STATES, prompt: :translate %>
               <%= f.input :category_list, collection: Resource::CATEGORIES, input_html: { multiple: true }%>
-              <%# <%= f.input :description %>
               <%= f.button :submit, "Submit", class: "orgbutton btn btn-secondary mr-2" %>
               <%= f.button :button, "Cancel", type: "reset", class: "text-decoration-none clear" %>
             <% end %>
