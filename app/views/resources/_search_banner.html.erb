@@ -16,47 +16,47 @@
               <div class="list-group-item rounded m-2">
                   <p class="mb-0">
                   <%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %>
-                  <i class="fas fa-home fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= tag.name%></p>
+                  <i class="fas fa-home fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Housing") %></p>
               </div>
             <% elsif tag.name == "Financial help" %>
               <div class="list-group-item rounded m-2">
-                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-hand-holding-usd fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= tag.name%></p>
+                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-hand-holding-usd fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Financial help")%></p>
               </div>
             <% elsif tag.name == "Everyday" %>
               <div class="list-group-item rounded m-2">
-                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-utensils fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= tag.name%></p>
+                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-utensils fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Everyday")%></p>
               </div>
             <% elsif tag.name == "Education" %>
               <div class="list-group-item rounded m-2">
-                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-user-graduate fa-3x m-2 grey p-3 white-text rounded-circle " aria-hidden="true"></i><%= tag.name%></p>
+                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-user-graduate fa-3x m-2 grey p-3 white-text rounded-circle " aria-hidden="true"></i><%= t("Education")%></p>
               </div>
             <% elsif tag.name == "Employment" %>
               <div class="list-group-item rounded m-2">
-                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-briefcase fa-3x m-2 grey p-3 white-text rounded-circle " aria-hidden="true"></i><%= tag.name%></p>
+                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-briefcase fa-3x m-2 grey p-3 white-text rounded-circle " aria-hidden="true"></i><%= t("Employment")%></p>
               </div>
             <% elsif tag.name == "Health" %>
               <div class="list-group-item rounded m-2">
-                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-user-md fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= tag.name%></p>
+                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-user-md fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Health")%></p>
               </div>
             <% elsif tag.name == "Community" %>
               <div class="list-group-item  rounded m-2">
-                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-users fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= tag.name%></p>
+                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-users fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Community")%></p>
               </div>
             <% elsif tag.name == "Visa" %>
               <div class="list-group-item rounded m-2">
-                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-passport fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= tag.name%></p>
+                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %><i class="fas fa-passport fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Visa")%></p>
               </div>
             <% else %>
               <div class="list-group-item rounded m-2">
-                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %> <i class="fas fa-balance-scale-right fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i>Legal</p>
+                <p class="mb-0"><%= check_box_tag "keywords[]" , tag.name, params[:keywords].present? ? params[:keywords].include?(tag.name) : false, class: "checkbox" %> <i class="fas fa-balance-scale-right fa-3x m-2 grey p-3 white-text rounded-circle" aria-hidden="true"></i><%= t("Legal")%></p>
               </div>
           <% end %>
         </div>
       <% end %>
     </div>
     <div class= "searchbutton">
-        <%= f.submit "Search", class: "orgbutton btn btn-secondary" %>
-        <%= link_to "Clear all", resources_path, class: "text-decoration-none clear" %>
+        <%= f.submit t("Search"), class: "orgbutton btn btn-secondary" %>
+        <%= link_to t("Clear all"), resources_path, class: "text-decoration-none clear" %>
     <% end %>
     </div>
   </div>
