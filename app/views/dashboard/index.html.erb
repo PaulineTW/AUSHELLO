@@ -12,6 +12,7 @@
       <div class= "notification-content p-3">
         <p><strong><%= resource.name %></strong>
         <br><%= resource.address %>
+        <br><%= resource.state %>
         <br><%= resource.website%>
         <br><%= resource.phone%>
         <br><%= resource.email%>
@@ -25,11 +26,15 @@
         </p>
 
       <div class="notification-actions">
-        <%# <a href=""><%= link_to 'Edit my resource', edit_resource_path(resource)%><i class="fas fa-pencil-alt"></i> </a> %>
-        <%# <a href=""><%= link_to 'Cancel', resource_path(resource),
-            method: :delete,
-            data: { confirm: "Are you sure you want to cancel?" } %> <i class="far fa-trash-alt"></i> </a> %>
+        <% if resource.status == "Pending" %>
+        <%# <%= link_to 'Approve', resource_approve_path(booking), :method => 'patch', class: "btn btn-secondary m-5"%>
+        <%# <%= link_to 'Decline ', booking_decline_path(booking), :method => 'patch', class: "btn btn-secondary m-5"%>
+        <%= link_to 'Approve', class: "btn btn-secondary m-5" %>
+        <%= link_to 'Update', class: "btn btn-secondary m-5" %>
+        <%= link_to 'Decline', class: "btn btn-secondary m-5" %>
+        <% end  %>
       </div>
+
     </div>
   <% end %>
   </div>
