@@ -23,11 +23,11 @@
         <% if resource.status == "Pending" %> <br> This resource need to be reviewed
         <% elsif resource.status == "confirmed" %> <br> This resource have been to be reviewed
         <% end  %>
-        </p>
 
       <div class="notification-actions">
         <% if resource.status == "Pending" %>
-        <a href=""><%= link_to 'Approve', :method => 'patch'%><i class="far fa-thumbs-up"></i></a>
+        <%# <%= link_to 'Approve', resource_approve_path(booking), :method => 'patch', class: "orgbutton btn btn-secondary m-5"%> 
+        <%= link_to 'Approve', class: "orgbutton btn btn-secondary m-5" %>
         <% end  %>
       </div>
     </div>

@@ -53,7 +53,7 @@ class ResourcesController < ApplicationController
 
   def approve
     @resource = Resource.find(params[:id])
-    @resource.status = "confirmed"
+    @resource.status.update(status: “confirmed”)
     @resource.save
     redirect_to dashboard_path
   end
