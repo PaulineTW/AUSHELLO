@@ -3,9 +3,19 @@
   position: relative;
   top: 0;
   width: 100%;
-  opacity: 0.80;
+  // opacity: 0.80;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.icon-lense {
+  padding: 30px;
+  color: $myorange;
+
+}
+
+.icon-lense:hover {
+  color: $myyellow;
 }
 
 /* Split the screen in half */
@@ -21,7 +31,6 @@
 /* Control the left side */
 .left {
   left: 0;
-  background-color: $mywhite;;
 }
 
 /* Control the right side */

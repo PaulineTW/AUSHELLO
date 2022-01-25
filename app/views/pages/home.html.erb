@@ -6,6 +6,12 @@
   <div class="centered">
     <%= image_tag "aushello_logo.png", class:"logo" %>
     <h3><%= t("Slogan") %></h3>
-    <%= link_to t("Search Now"), resources_path, class: "orgbutton btn btn-secondary m-5" %>
+    <%# <%= link_to t("Search Now"), resources_path, class: "orgbutton btn btn-secondary m-5" %>
+
+
+    <%= link_to resources_path do %>
+      <i class="icon-lense fas fa-search-location fa-5x"></i>
+    <% end %>
+
   </div>
 </div>
