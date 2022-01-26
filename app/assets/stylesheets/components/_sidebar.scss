@@ -1,5 +1,3 @@
-
-
 .sidenav {
   width: 300px;
   // position: fixed;
@@ -45,5 +43,5 @@
 .alignmapandsidenav{
   display: flex;
   flex-direction: row-reverse;
-
+  justify-content: flex-end;
 }
