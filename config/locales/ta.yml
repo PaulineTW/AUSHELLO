@@ -1,0 +1,48 @@
+ta:
+  Address: "முகவரி"
+  Phone: "தொலைபேசி"
+  Contact: "தொடர்பு கொள்ளவும்"
+  Email: "மின்னஞ்சல்"
+  Website: "இணையதளம்"
+  Directions: "திசைகள்"
+  Description: "விளக்கம்"
+  Home: "வீடு"
+
+  Messages: "செய்திகள்"
+  Login: "உள்நுழைய"
+  Log Out: "வெளியேறு"
+  Search Now: "இப்போது தேடுங்கள்"
+  English: "English"
+  Español: "Español"
+  عربى: "عربى"
+  فارسی": فارسی"
+  தமிழ்: "தமிழ்"
+
+  Search By City: "நகரத்தின் அடிப்படையில் தேடுங்கள்"
+  Submit: "சமர்ப்பிக்க"
+  Add a Resource: "ஒரு ஆதாரத்தைச் சேர்க்கவும்"
+  My Dashboard: "எனது டாஷ்போர்டு"
+  My Favourites: "எனக்கு பிடித்தவை"
+  My Resources: "எனது வளங்கள்"
+
+  As a resource provider: "ஒரு வள வழங்குநராக"
+  To Approve: "ஒப்புதல் அளிக்க"
+  Is this information wrong?: "இந்தத் தகவல் தவறானதா?"
+  Housing: "வீட்டுவசதி"
+  Financial help: "நிதி உதவி"
+  Everyday: "தினமும்"
+  Education: "கல்வி"
+  Employment: "வேலைவாய்ப்பு"
+
+  Health: "ஆரோக்கியம்"
+  Community: "சமூக"
+  Visa: "விசா"
+
+  Legal: "சட்டபூர்வமான"
+
+  Resources: "வளங்கள்"
+  Search: "தேடல்"
+
+  Clear all: "அனைத்தையும் அழி"
+
+  My favourites: "எனக்கு பிடித்தவை"
