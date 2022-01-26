@@ -1,0 +1,48 @@
+
+fa:
+  Address: "آدرس"
+  Phone: "تلفن"
+  Contact: "تماس"
+  Email: "ایمیل"
+  Website: "وب سایت"
+  Directions: "مسیرها "
+  Description: "توضیحات"
+  Home: "خانه"
+
+  Messages: "پیام"
+  Login: "ورود"
+  Log Out: "ورود به سیستم"
+  Search Now: "جستجو در حال حاضر"
+  English: "English"
+  Español: "Español"
+  عربى: "عربى"
+  فارسی": فارسی"
+
+  Search By City: "جستجو بر اساس شهر"
+  Submit: "ارسال"
+  Add a Resource: "افزودن یک منبع"
+  My Dashboard: "داشبورد من"
+  My Favourites: "مورد علاقه های من"
+  My Resources: "منابع من"
+
+  As a resource provider: "به عنوان ارائه دهنده منابع"
+  To Approve: "برای تایید"
+  Is this information wrong?: "آیا این اطلاعات اشتباه است؟"
+  Housing: "مسکن"
+  Financial help: "کمک مالی"
+  Everyday: "روزمره"
+  Education: "آموزش"
+  Employment: "اشتغال"
+
+  Health: "بهداشت و سلامتی"
+  Community: "جامعه"
+  Visa: "ویزا"
+
+  Legal: "قانونی"
+
+  Resources: "منابع"
+  Search: "جستجو"
+
+  Clear all: "پاک کردن همه"
+
+  My favourites: "مورد علاقه های من"
