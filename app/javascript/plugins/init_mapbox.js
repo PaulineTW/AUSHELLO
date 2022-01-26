@@ -44,11 +44,18 @@ const initMapbox = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) {
     const map = buildMap(mapElement);
+    map.on('load', () => {
+      console.log("map loaded")
+      const mapContainerEl = document.getElementById('map');
+      mapContainerEl.style.visibility = 'visible';
+    });
+    console.log("map on ran")
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-    setTimeout('', 2000);
+    // setTimeout('', 2000);
   }
+
 };
 
 export { initMapbox };
