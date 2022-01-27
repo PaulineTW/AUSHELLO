@@ -24,15 +24,38 @@
         <% elsif resource.status == "confirmed" %> <br> This resource has been reviewed and approved
         <% end  %>
         </p>
-
-      <div class="notification-actions">
-        <% if resource.status == "Pending" %>
-        <%= link_to 'Approve', resources_approve_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
-        <%= link_to 'Decline', resources_decline_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
-        <% end  %>
+      <div class="tab-wrap">
+        <div class="notification-actions">
+          <% if resource.status == "Pending" %>
+          <%= link_to 'Approve', resources_approve_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
+          <%= link_to 'Decline', resources_decline_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
+          <% end  %>
+        </div>
       </div>
-
     </div>
   <% end %>
-  </div>
 </div>
+  <div class="container">
+    <div class="notification card m-4 p-3">
+      <h1>Pending Messages</h1>
+          <div class="unsolved-messages">
+            <% @messages_unsolved.each do |message| %>
+              <div class="notification-content p-3">
+                <b>User:</b>
+                <%= message.user.email%>
+                <br>
+                <br>
+                <b>Message:</b>
+                <%= message.content%>
+            <%end%>
+              </div>
+          </div>
+            <div class="solved-messages">
+            <% @messages_solved.each do |message| %>
+              <%= message.content%>
+              <%= message.user.email%>
+            <%end%>
+            </div>  
+      </div>
+    </div>
+  </div>
