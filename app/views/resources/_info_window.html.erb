@@ -2,30 +2,17 @@
   <div id="heart" data-update-fave-button-target="items">
     <% favourite = resource.favourited_by_user?(current_user) %>
     <% if favourite %>
-      <%= link_to icon('fas', 'heart'), favourite_path(I18n.locale, favourite), method: :delete, data: {update_fave_button_target: "button", action: 'click->update-fave-button#unfave'}  %>
-
-    <%# <% raise %>
+      <%= link_to icon('fas', 'heart'), favourite_path(I18n.locale, favourite), class:"heart-icon", method: :delete, data: {update_fave_button_target: "button", action: 'click->update-fave-button#unfave'}  %>
         <% else %>
-      <%= link_to icon('far', 'heart'), resource_favourites_path(I18n.locale, resource), method: :post, data: {update_fave_button_target: "button", action: 'click->update-fave-button#fave'} %>
+      <%= link_to icon('far', 'heart'), resource_favourites_path(I18n.locale, resource), class:"heart-icon", method: :post, data: {update_fave_button_target: "button", action: 'click->update-fave-button#fave'} %>
     <% end %>
   </div>
-
-
   <div  data-update-fave-button-target="resources">
-  <h3><%= resource.name %></h3>
-  <h6><%= resource.categories.pluck(:name).join(',') %></h6>
-  <p><%= t("Address")  %>: <br><%= resource.address %></p>
-  <p><%= t("Contact")  %>: <br><%= resource.phone %></p>
-  <p><%= t("Description") %>: <br><%= resource.description %></p>
-  <p><%= t("Email")  %>: <%= mail_to resource.email %></p>
+  <h5><%= resource.name %></h5>
+  <h6><%= t("Address")  %>: <br><%= resource.address %></h6>
+  <a href="<%= resource.website %>" target="_blank"><%= t("Website")  %></a>
+  <a href="<%= "https://www.google.com/maps/dir//" + resource.address.gsub(" ", "+") %>" target="_blank"><%= t("Directions")  %></a>
   <br>
   <%= link_to t("Is this information wrong?"), new_resource_message_path(resource) %>
-
-  <br>
-  <br>
-  <a href="<%= resource.website %>" target="_blank"><%= t("Website")  %></a> |
-  <a href="<%= resource.phone %>"><%= t("Phone")  %></a> |
-  <a href="<%= "https://www.google.com/maps/dir//" + resource.address.gsub(" ", "+") %>" target="_blank"><%= t("Directions")  %></a>
-
-</div>
+  </div>
 </div>
