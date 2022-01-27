@@ -11,10 +11,14 @@
 .notification-content{
   display: flex;
   justify-content: left;
+  align-items: center;
   margin: 16px;
   border-radius:5px;
   border: 1px solid #dbd8d8
+}
 
+.notification-content p {
+  font-size: 16px;
 }
 
 .notification .notification-content {
@@ -36,6 +40,17 @@
 .notification-actions {
   align-items: center;
 }
+
+.notification-actions .yellowbutton {
+  margin-left: 120px;
+  margin-top: 10px;
+
+}
+
+.notification-actions .a {
+  margin-top: 10px;
+}
+
 .notification .notification-actions {
   opacity: 0;
   display: flex;
@@ -60,8 +75,4 @@
 .notification .notification-actions a:hover {
   color: #555555;
     text-align: center;
-}
-
-.test {
-  border: purple;
 }

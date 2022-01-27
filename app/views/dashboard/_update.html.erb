@@ -3,7 +3,8 @@
       <div class="notification-content p-3">
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Resource: </strong><%= message.resource.name%></li>
-          <li class="list-group-item"><strong>User: </strong><%= message.user.email.split('@')[0].capitalize%></li>
+          <li class="list-group-item"><strong>User's name: </strong><%= message.user.email.split('@')[0].capitalize%></li>
+          <li class="list-group-item"><strong>User's email: </strong><%= message.user.email%></li>
           <li class="list-group-item"><strong>Issue: </strong><%= message.issue%></li>
           <li class="list-group-item"><strong>Message: </strong><%= message.content%></li>
         <% if message.solved == false %>
@@ -23,9 +24,8 @@
       <% @messages_solved.each do |message| %>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Resource: </strong><%= message.resource.name%></li>
-          <li class="list-group-item"><strong>User: </strong><%= message.user.email.split('@')[0].capitalize%></li>
           <li class="list-group-item"><strong>Message: </strong><%= message.content%></li>
-          <li class="list-group-item">This submition has been reviewed</li>
+          <li class="list-group-item">This submission has been reviewed</li>
         </ul>
     </div>
       <%end%>

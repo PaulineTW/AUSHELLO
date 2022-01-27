@@ -11,11 +11,6 @@
       <br>
       <br>Status of resource is <b><%= resource.status%></b>
       <br>
-
-      <% if resource.status == "pending" %> <br>
-      <% elsif resource.status == "confirmed" %> <br>
-      <% end  %>
-
       <div class="notification-actions">
         <% if resource.status == "Pending" %>
         <%= link_to 'Approve', resources_approve_path(resource), :method => 'patch', class: "yellowbutton btn-lg text-decoration-none"%>
