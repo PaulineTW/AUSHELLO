@@ -8,7 +8,7 @@
         <% if message.solved == false %>
           <li class="list-group-item">This submition need to be reviewed</li>
           <li class="list-group-item">
-          <%= link_to 'Reviewed', href="#", class: "yellowbutton btn-sm text-decoration-none"%>
+          <%= link_to 'Reviewed', messages_review_path(message), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
           </li>
         <% elsif resource.status == true %>
           <li class="list-group-item">This submition has been reviewed</li>
