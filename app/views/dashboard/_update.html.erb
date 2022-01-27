@@ -7,28 +7,27 @@
           <li class="list-group-item"><strong>Issue: </strong><%= message.issue%></li>
           <li class="list-group-item"><strong>Message: </strong><%= message.content%></li>
         <% if message.solved == false %>
-          <li class="list-group-item">This submission need to be reviewed</li>
+          <li class="list-group-item"><em>This submission need to be reviewed</em></li>
           <li class="list-group-item">
           <%= link_to 'Reviewed', messages_review_path(message), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
+          <%# <%= link_to 'Delete', messages_destroy_path(message), :method => 'patch', class: "yellowbutton btn-lg text-decoration-none"%>
           </li>
         <% else %>
-
           <li class="list-group-item">This submission has been reviewed</li>
         <% end  %>
         </ul>
       </div>
     <%end%>
   <div class="solved-messages">
-  <div class="notification-content p-3">
-    <% @messages_solved.each do |message| %>
+    <div class="notification-content p-3">
+      <% @messages_solved.each do |message| %>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Resource: </strong><%= message.resource.name%></li>
           <li class="list-group-item"><strong>User: </strong><%= message.user.email.split('@')[0].capitalize%></li>
           <li class="list-group-item"><strong>Message: </strong><%= message.content%></li>
           <li class="list-group-item">This submition has been reviewed</li>
-
         </ul>
-</div>
-    <%end%>
+    </div>
+      <%end%>
   </div>
 </div>
