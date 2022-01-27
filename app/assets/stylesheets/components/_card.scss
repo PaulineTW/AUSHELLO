@@ -2,6 +2,7 @@
   width: 120px;
   height: 120px;
   background: white;
+    // background: rgba(255, 208, 13, .5);
   color:black;
   display: flex;
   flex-direction: column;
@@ -19,17 +20,22 @@ input:checked ~ label {
 
 .card-product {
   overflow: hidden;
-  height: 180px;
+  height: 300px;
+  width: 290px;
+  // background: #ffd00d;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(255, 208, 13, .8);
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  border-radius: 3px;
+  margin-top: 36px;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 100px;
   object-fit: contain;
   margin:5px;
 }
@@ -37,7 +43,7 @@ input:checked ~ label {
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 15px;
 }
 
 .card-product p {
@@ -51,3 +57,44 @@ input:checked ~ label {
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.websitecontainer {
+    align-items: stretch;
+    display: flex;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+      //  background: rgba(255, 208, 13, .5);
+    // background-color: #ffd00d;
+
+}
+
+.phone {
+  align-items: flex-end;
+  margin-left: 10px,
+
+}
+
+.address {
+  align-items: flex-end;
+  margin-left: 10px,
+}
+
+.email {
+  align-items: flex-end;
+  margin-left: 10px,
+
+}
+
+.row {
+  display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+    justify-content: space-evenly;
+}
+
+// .name {
+//   display: flex;
+// }
