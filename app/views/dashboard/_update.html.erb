@@ -1,0 +1,24 @@
+<div class="container">
+  <%# <div class="notification card m-4 p-3">
+    <div class="unsolved-messages"> %>
+      <% @messages_unsolved.each do |message| %>
+        <%# <div class="notification-content p-3"> %>
+          <br><b>Resource:</b>
+          <br><%= message.resource.name%>
+          <br><b>User:</b>
+          <br><%= message.user.email%>
+          <br><b>Message:</b>
+          <br><%= message.content%>
+          <br><b>Solved?</b>
+          <br><%= message.solved%>
+        <%# </div> %>
+      <%end%>
+      <%# <div class="solved-messages"> %>
+        <% @messages_solved.each do |message| %>
+          <%= message.content%>
+          <%= message.user.email%>
+        <%end%>
+      <%# </div>
+    </div> %>
+  <%# </div> %>
+</div>
