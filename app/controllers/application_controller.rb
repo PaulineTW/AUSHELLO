@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   puts I18n.locale
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   def extract_locale
     parsed_locale = language_params[:lang]
     I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
