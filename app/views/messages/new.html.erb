@@ -12,6 +12,7 @@
                 <div class="container p-2">
                     <div class="card-body">
                         <%= simple_form_for [@resource, @message] do |f| %>
+                            <%= f.input :issue, collection: Message::ISSUES, input_html: { multiple: true }%>
                             <%= f.input :content, :label => "Please describe your issue as best you can" %>
                             <%= f.button :submit, "Submit", class: "orgbutton btn btn-secondary mr-2" %>
                             <%= f.button :button, "Cancel", type: "reset", class: "text-decoration-none clear" %>
