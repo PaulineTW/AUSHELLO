@@ -12,15 +12,15 @@
         <br>Status of resource is <b><%= resource.status%></b>
         <br>
       </p>
-           <% if resource.status == "Pending" %> <br> This resource still needs to be reviewed.
-      <% elsif resource.status == "confirmed" %> <br> This resource has been reviewed and approved
-    <% end  %>
+        <% if resource.status == "Pending" %> <br> This resource still needs to be reviewed.
+        <% elsif resource.status == "confirmed" %> <br> This resource has been reviewed and approved
+        <% end  %>
 
-    <div class="notification-actions">
-          <% if resource.status == "Pending" %>
-          <%= link_to 'Approve', resources_approve_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
-          <%= link_to 'Decline', resources_decline_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
-          <% end  %>
+      <div class="notification-actions">
+        <% if resource.status == "Pending" %>
+        <%= link_to 'Approve', resources_approve_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
+        <%= link_to 'Decline', resources_decline_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
+        <% end  %>
       </div>
     </div>
   <% end %>
