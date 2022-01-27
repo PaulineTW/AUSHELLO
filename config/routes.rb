@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :resources do
       resources :messages, only: [:new, :create]
   end
-  scope "(:locale)", locale: /en|ar|es/ do
+  scope "(:locale)", locale: /en|ar|ta|es|fa/ do
     devise_for :users
     root to: 'pages#home'
 
