@@ -11,6 +11,7 @@ class FavouritesController < ApplicationController
     @resource = Resource.find(params[:resource_id])
     @favourite.resource = @resource
     @favourite.save
+    redirect_to resources_path, notice: "You favourited #{@resource.name}"
   end
 
   def destroy

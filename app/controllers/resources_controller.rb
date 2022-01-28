@@ -47,7 +47,7 @@ class ResourcesController < ApplicationController
     @resource.status = "Pending"
     if @resource.valid?
       @resource.save
-      redirect_to resources_path
+      redirect_to resources_path, notice: "You Submitted A New Resource: #{@resource.name}"
     else
       render :new
     end
@@ -57,17 +57,22 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
     @resource.status = "confirmed"
     @resource.save
-    redirect_to dashboard_index_path
+    redirect_to dashboard_index_path, notice: "You Approved: #{@resource.name}"
   end
 
   def decline
     @resource = Resource.find(params[:id])
-    @resource.status = "confirmed"
+    @resource.status = "declined"
     @resource.save
-    redirect_to dashboard_index_path
+    redirect_to dashboard_index_path, notice: "You Declined: #{@resource.name}"
   end
 
-
+  def destroy
+    resource = Resource.find(params[:id])
+    resource.destroy
+    resource.save
+    redirect_to dashboard_index_path, notice: "You Deleted: #{resource.name}"
+  end
 
   private
 

@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       @message.user = current_user
       @message.resource = Resource.find(params[:resource_id])
       if @message.save
-        redirect_to resources_path
+        redirect_to resources_path, notice: "Message Sent"
       end
   end
 
@@ -17,7 +17,14 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     @message.solved = true
     @message.save
-    redirect_to dashboard_index_path
+    redirect_to dashboard_index_path, notice: "Message Approved"
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    @message.save
+    redirect_to dashboard_index_path, notice: "Message Deleted"
   end
 
   private
