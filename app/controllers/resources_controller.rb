@@ -62,7 +62,7 @@ class ResourcesController < ApplicationController
 
   def decline
     @resource = Resource.find(params[:id])
-    @resource.status = "confirmed"
+    @resource.status = "declined"
     @resource.save
     redirect_to dashboard_index_path
   end
