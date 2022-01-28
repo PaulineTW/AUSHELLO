@@ -3,62 +3,20 @@
     <h1><%= t("Admin Dashboard") %></h1>
   </div>
  </div>
-</div>
 
 <div class="container">
-  <div class= "notification card m-4 p-3">
-    <h1>Pending new resources</h1>
-    <% @resources.each do |resource| %>
-      <div class= "notification-content p-3">
-        <p><strong><%= resource.name %></strong>
-        <br><%= resource.address %>
-        <br><%= resource.state %>
-        <br><%= resource.website%>
-        <br><%= resource.phone%>
-        <br><%= resource.email%>
-        <br><%= resource.categories.pluck(:name).join(', ') %>
-        <br>
-        <br>Status of resource is <b><%= resource.status%></b>
-        <br>
-        <% if resource.status == "Pending" %> <br> This resource still needs to be reviewed.
-        <% elsif resource.status == "confirmed" %> <br> This resource has been reviewed and approved
-        <% end  %>
-        </p>
-      <div class="tab-wrap">
-        <div class="notification-actions">
-          <% if resource.status == "Pending" %>
-          <%= link_to 'Approve', resources_approve_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
-          <%= link_to 'Decline', resources_decline_path(resource), :method => 'patch', class: "btn btn-secondary m-5"%>
-          <% end  %>
-        </div>
-      </div>
+  <div class="tab-wrap">
+    <input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
+    <label for="tab1">Resources submitted</label>
+
+    <input type="radio" id="tab2" name="tabGroup1" class="tab">
+    <label for="tab2">Updates submitted</label>
+
+    <div class="tab__content">
+       <%= render "new_resource" %>
     </div>
-  <% end %>
-</div>
-  <div class="container">
-    <div class="notification card m-4 p-3">
-      <h1>Pending Messages</h1>
-          <div class="unsolved-messages">
-            <% @messages_unsolved.each do |message| %>
-              <div class="notification-content p-3">
-                <br><b>Resource:</b>
-                <br><%= message.resource.name%>
-                <br><b>User:</b>
-                <br><%= message.user.email%>
-                <br><b>Message:</b>
-                <br><%= message.content%>
-                <%# if solved = false, this needs to be resolved %>
-                <br><b>Solved?</b>
-                <br><%= message.solved%>
-              <%end%>
-              </div>
-          </div>
-            <div class="solved-messages">
-              <% @messages_solved.each do |message| %>
-                <%= message.content%>
-                <%= message.user.email%>
-              <%end%>
-            </div>  
-      </div>
+    <div class="tab__content">
+      <%= render "update" %>
     </div>
   </div>
+</div>

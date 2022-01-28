@@ -1,0 +1,21 @@
+
+  <% @resources.each do |resource| %>
+    <div class= "notification-content p-3">
+      <p><strong><%= resource.name %></strong>
+      <br><%= resource.address %>
+      <br><%= resource.state %>
+      <br><%= resource.website%>
+      <br><%= resource.phone%>
+      <br><%= resource.email%>
+      <br><%= resource.categories.pluck(:name).join(', ') %>
+      <br>
+      <br>Status of resource is <b><%= resource.status%></b>
+      <br>
+      <div class="notification-actions">
+        <% if resource.status == "Pending" %>
+        <%= link_to 'Approve', resources_approve_path(resource), :method => 'patch', class: "yellowbutton btn-lg text-decoration-none"%>
+        <%= link_to 'Decline', resources_decline_path(resource), :method => 'patch', class: "yellowbutton btn-lg text-decoration-none"%>
+        <% end  %>
+      </div>
+    </div>
+  <% end %>

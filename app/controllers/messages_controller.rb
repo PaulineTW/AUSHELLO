@@ -13,9 +13,16 @@ class MessagesController < ApplicationController
       end
   end
 
+  def review
+    @message = Message.find(params[:id])
+    @message.solved = true
+    @message.save
+    redirect_to dashboard_index_path
+  end
+
   private
 
   def message_params
-      params.require(:message).permit(:content)
+      params.require(:message).permit(:content, :issue)
   end
 end
