@@ -15,10 +15,10 @@
           <h3>Register Your Organisation</h3>
             <%= simple_form_for @resource do |f| %>
               <%= f.input :name %>
-              <%= f.input :address, placeholder: '15 Church street, Richmond VIC 3121'%>
-              <%= f.input :website, placeholder: 'https://www.helprefugee.com.au'%>
-              <%= f.input :phone, placeholder: '03 8398 4171' %>
-              <%= f.input :email, placeholder: 'info@refugee.com' %>
+              <%= f.input :address, placeholder: '15 Sample street, Suburb VIC 3121'%>
+              <%= f.input :website, placeholder: 'https://www.organisation.com.au'%>
+              <%= f.input :phone, placeholder: '03 8765 4321' %>
+              <%= f.input :email, placeholder: 'info@email.com' %>
               <%= f.input :state, collection: Resource::STATES, prompt: :translate %>
               <%= f.input :category_list, collection: Resource::CATEGORIES, input_html: { multiple: true }%>
               <%= f.button :submit, "Submit", class: "orgbutton btn btn-secondary mr-2" %>
