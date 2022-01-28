@@ -11,6 +11,7 @@
         <br><%= resource.categories.pluck(:name).join(', ') %>
         <br>
         <br>Status of resource is <b><%= resource.status%></b>
+        <%= link_to icon('far', 'heart'), resources_destroy_path(resource), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
         <br>
         <div class="notification-actions">
           <% if resource.status == "Pending" %>

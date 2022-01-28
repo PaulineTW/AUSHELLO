@@ -67,6 +67,13 @@ class ResourcesController < ApplicationController
     redirect_to dashboard_index_path, notice: "You Declined: #{@resource.name}"
   end
 
+  def destroy
+    resource = Resource.find(params[:id])
+    resource.destroy
+    resource.save
+    redirect_to dashboard_index_path, notice: "You Deleted: #{resource.name}"
+  end
+
   private
 
   def resource_params
