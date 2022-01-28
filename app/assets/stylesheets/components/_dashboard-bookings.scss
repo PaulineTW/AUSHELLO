@@ -38,12 +38,13 @@
 }
 
 .notification-actions {
-  align-items: center;
+  display: flex;
+  justify-content: flex-start;
 }
 
+
 .notification-actions .yellowbutton {
-  margin-left: 120px;
-  margin-top: 10px;
+  margin-right: 10px;
 
 }
 
