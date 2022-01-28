@@ -20,6 +20,13 @@ class MessagesController < ApplicationController
     redirect_to dashboard_index_path
   end
 
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    @message.save
+    redirect_to dashboard_index_path
+  end
+
   private
 
   def message_params

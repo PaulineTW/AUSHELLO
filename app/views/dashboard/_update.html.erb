@@ -8,10 +8,10 @@
           <li class="list-group-item"><strong>Issue: </strong><%= message.issue%></li>
           <li class="list-group-item"><strong>Message: </strong><%= message.content%></li>
         <% if message.solved == false %>
-          <li class="list-group-item"><em>This submission need to be reviewed</em></li>
+          <li class="list-group-item"><em>This submission needs to be reviewed</em></li>
           <li class="list-group-item">
           <%= link_to 'Reviewed', messages_review_path(message), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
-          <%# <%= link_to 'Delete', messages_destroy_path(message), :method => 'patch', class: "yellowbutton btn-lg text-decoration-none"%>
+          <%= link_to 'Delete', messages_destroy_path(message), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
           </li>
         <% else %>
           <li class="list-group-item">This submission has been reviewed</li>
