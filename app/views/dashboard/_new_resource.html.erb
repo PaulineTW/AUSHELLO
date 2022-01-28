@@ -11,14 +11,13 @@
         <br><%= resource.categories.pluck(:name).join(', ') %>
         <br>
         <br>Status of resource is <b><%= resource.status%></b>
-        <%= link_to icon('far', 'heart'), resources_destroy_path(resource), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
         <br>
         <div class="notification-actions">
           <% if resource.status == "Pending" %>
-            <div class="d-inline-flex">
               <%= link_to 'Approve', resources_approve_path(resource), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
               <%= link_to 'Decline', resources_decline_path(resource), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
-            </div>
+            <% elsif resource.status == "declined" || resource.status == "confirmed" %>
+            <br><%= link_to 'Delete', resources_destroy_path(resource), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
           <% end  %>
         </div>
       </ul>

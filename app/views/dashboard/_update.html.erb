@@ -27,6 +27,7 @@
         <li class="list-group-item"><strong>Resource: </strong><%= message.resource.name%></li>
         <li class="list-group-item"><strong>Message: </strong><%= message.content%></li>
         <li class="list-group-item">This submission has been reviewed</li>
+         <%= link_to 'Delete', messages_destroy_path(message), :method => 'patch', class: "yellowbutton btn-sm text-decoration-none"%>
       </ul>
     </div>
   <%end%>
