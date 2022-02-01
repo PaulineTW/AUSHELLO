@@ -6,11 +6,26 @@
 
 > AusHello is location-based app to connect refugees to find critical local resources in communities around Australia.
 
+Live: [Aushello](https://www.aushello.com)
+
+Demo Login
+Use the following credentials to explore the app:
+Username: pauline@user2.com
+Password: password
+
 ## Stack
+
 - Back end: Ruby on Rails
 - Database: PostgreSQL
 - Front end: HTML5, CSS3, JavaScript (ES6), Bootstrap
 - Hosting: Heroku
+
+Gem/Helper
+- Geocoder control [(Mapbox Geocoding API)](https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/)
+- Map & navigation [(Mapbox API)](https://docs.mapbox.com/api/overview/)
+- Tagging plugin [(ActsAsTaggable)](https://github.com/mbleigh/acts-as-taggable-on)
+- Search engine [(Algolia Search)](https://www.algolia.com/doc/)
+- Translation multi-language [(Internationalization (I18n) API)](https://guides.rubyonrails.org/i18n.html)
 
 ## Team Members
 
