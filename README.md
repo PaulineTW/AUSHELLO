@@ -29,7 +29,7 @@ Gem/Helper
 
 ## Features
 
-- Access to Aushello in 5 languages (English عربى தமிழ் Español فارسی) 
+- Access Aushello in 5 languages (English عربى தமிழ் Español فارسی) 
 - Browse resources
 - Filter resources by location
 - Filter resources by category
