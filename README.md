@@ -27,6 +27,18 @@ Gem/Helper
 - Search engine [(Algolia Search)](https://www.algolia.com/doc/)
 - Translation multi-language [(Internationalization (I18n) API)](https://guides.rubyonrails.org/i18n.html)
 
+## Features
+
+- Access to Aushello in 5 languages (English عربى தமிழ் Español فارسی) 
+- Browse resources
+- Filter resources by location
+- Filter resources by category
+- Favourites resources
+- Access to all favourites resources in Favourites dashboard
+- Add new resource
+- Submit update to existing resource
+- Admin can review new resources and validate update
+
 ## Team Members
 
 - [Julianne Tran](https://github.com/juliannetran)
