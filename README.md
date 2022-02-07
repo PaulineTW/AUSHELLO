@@ -10,8 +10,8 @@ Live: [Aushello](https://www.aushello.com)
 
 Demo Login
 Use the following credentials to explore the app:
-Username: pauline@user2.com
-Password: password
+- Username: pauline@user2.com
+- Password: password
 
 ## Stack
 
