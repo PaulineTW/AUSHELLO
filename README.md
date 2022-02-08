@@ -1,5 +1,7 @@
 ![home_page](https://user-images.githubusercontent.com/87069685/151294614-66c6d7d4-c865-49bf-adad-385554e07aba.png)
 ![index](https://user-images.githubusercontent.com/87069685/151294676-64790d52-4f47-406c-aad6-e122c2c7ac4f.png)
+![image](https://user-images.githubusercontent.com/87069685/152911989-613db989-9b90-43e5-be16-1205ed491f18.png)
+![image](https://user-images.githubusercontent.com/87069685/152912117-33b9f0e3-217b-44bb-8d94-aa377bcef42e.png)
 
 
 # AusHello
